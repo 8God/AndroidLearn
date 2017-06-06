@@ -10,4 +10,7 @@
         <item name="android:windowBackground">@color/C_C6B697</item>
     </style>
 
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
 </resources>
