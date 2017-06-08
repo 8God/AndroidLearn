@@ -7,12 +7,15 @@ import android.widget.Button;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import seu.com.androidlearn.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.touch.TouchTestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.btnTouchEvent)
     Button btnTouchEvent;
+    @BindView(R.id.btnStatusBar)
+    Button btnStatusBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,5 +27,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnTouchEvent)
     protected void clickTouchButton() {
         TouchTestActivity.launch(this);
+    }
+    @OnClick(R.id.btnStatusBar)
+    protected void clickStatusBarButton() {
+        StatusBarTestActivity.launch(this);
     }
 }
