@@ -20,6 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="StatusBar案例"/>
+        <Button
+            android:id="@+id/btnMultiPic"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="多个图片重叠"/>
 
     </LinearLayout>
 </ScrollView>

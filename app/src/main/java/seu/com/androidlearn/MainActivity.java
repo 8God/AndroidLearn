@@ -7,6 +7,7 @@ import android.widget.Button;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.touch.TouchTestActivity;
 
@@ -31,5 +32,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnStatusBar)
     protected void clickStatusBarButton() {
         StatusBarTestActivity.launch(this);
+    }
+    @OnClick(R.id.btnMultiPic)
+    protected void clickMultiPic() {
+        MultiPicActivity.launch(this);
     }
 }

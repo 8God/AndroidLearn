@@ -7,7 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:windowBackground">@color/C_C6B697</item>
+        <item name="android:windowBackground">@color/C_C6B697</item><!--如果为透明的话，背景显示的是黑色-->
     </style>
 
     <style name="SplashTheme" parent="AppTheme">
