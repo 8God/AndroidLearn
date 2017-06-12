@@ -7,6 +7,7 @@ import android.widget.Button;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import seu.com.androidlearn.battery.BatteryActivity;
 import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.dialog.AlertDialogActivity;
 import seu.com.androidlearn.statusbar.StatusBarTestActivity;
@@ -41,5 +42,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnShowAlertDialog)
     protected void clickAlertDialog() {
         AlertDialogActivity.launch(this);
+    }
+    @OnClick(R.id.btnBattery)
+    protected void clickBattery() {
+        BatteryActivity.launch(this);
     }
 }
