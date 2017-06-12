@@ -26,5 +26,11 @@
             android:layout_height="50dp"
             android:text="多个图片重叠"/>
 
+        <Button
+            android:id="@+id/btnShowAlertDialog"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="alertDialog旋转问题"/>
+
     </LinearLayout>
 </ScrollView>

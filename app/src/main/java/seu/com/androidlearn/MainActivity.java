@@ -8,6 +8,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import seu.com.androidlearn.customview.MultiPicActivity;
+import seu.com.androidlearn.dialog.AlertDialogActivity;
 import seu.com.androidlearn.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.touch.TouchTestActivity;
 
@@ -36,5 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnMultiPic)
     protected void clickMultiPic() {
         MultiPicActivity.launch(this);
+    }
+    @OnClick(R.id.btnShowAlertDialog)
+    protected void clickAlertDialog() {
+        AlertDialogActivity.launch(this);
     }
 }

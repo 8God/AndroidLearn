@@ -26,6 +26,7 @@
             android:theme="@style/StatusBarTran"/>
         <activity android:name=".touch.TouchTestActivity"/>
         <activity android:name=".customview.MultiPicActivity"/>
+        <activity android:name=".dialog.AlertDialogActivity"/>
     </application>
 
 </manifest>
