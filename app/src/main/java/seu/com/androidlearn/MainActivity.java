@@ -11,6 +11,7 @@ import seu.com.androidlearn.battery.BatteryActivity;
 import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.dialog.AlertDialogActivity;
 import seu.com.androidlearn.statusbar.StatusBarTestActivity;
+import seu.com.androidlearn.swipe.RecyclerActivity;
 import seu.com.androidlearn.touch.TouchTestActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,5 +47,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnBattery)
     protected void clickBattery() {
         BatteryActivity.launch(this);
+    }
+    @OnClick(R.id.btnSwipe)
+    protected void clickSwipe() {
+        RecyclerActivity.launch(this);
     }
 }

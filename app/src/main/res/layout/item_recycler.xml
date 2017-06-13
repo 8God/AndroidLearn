@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<seu.com.androidlearn.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="50dp">
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="d"/>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ff00ff"
+        android:text="删除"/>
+</seu.com.androidlearn.swipe.SwipeLayout>

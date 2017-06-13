@@ -28,6 +28,7 @@
         <activity android:name=".customview.MultiPicActivity"/>
         <activity android:name=".dialog.AlertDialogActivity"/>
         <activity android:name=".battery.BatteryActivity"/>
+        <activity android:name=".swipe.RecyclerActivity"/>
     </application>
 
 </manifest>
