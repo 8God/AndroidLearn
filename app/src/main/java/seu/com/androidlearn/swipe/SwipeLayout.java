@@ -74,7 +74,7 @@ public class SwipeLayout extends ViewGroup {
                 Log.e("Tag", "lastTouchX： " + lastTouchX);
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.e("Tag", "lastTouchX： " + lastTouchX + ", x :" + x + ", getScrollX: "+ getScrollX());
+                //getScrollX() 就是当前view的左上角相对于母视图的左上角的X轴偏移量
                 int delta = (int) (lastTouchX - x);
                 //加了scroller就没有这种问题了
                 //delta >0 表示左滑
