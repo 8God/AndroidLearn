@@ -66,7 +66,7 @@ public class BatteryActivity extends AppCompatActivity {
 
     private void showBatteryInfo() {
         IntentFilter ifilter = new IntentFilter(ACTION_BATTERY_CHANGED);
-        Intent batteryStatus = registerReceiver(null, ifilter);
+        Intent batteryStatus = registerReceiver(null, ifilter);//黏性广播，可以直接使用
         int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
         boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
                 status == BatteryManager.BATTERY_STATUS_FULL;
