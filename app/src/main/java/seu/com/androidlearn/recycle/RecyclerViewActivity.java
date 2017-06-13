@@ -28,6 +28,7 @@ import seu.com.androidlearn.swipe.RecyclerActivity;
  * 现在暂时问题：不同viewtype的item不能互相换位置：https://github.com/iPaulPro/Android-ItemTouchHelper-Demo/issues/7
  * 解决：https://stackoverflow.com/questions/43154047/android-recyclerview-drag-and-drop-over-multiple-viewtype
  * ：更换不同viewtype位置的item的时候，需要更换对应位置的数据：Collections.swap(adapter.getData(), i, i + 1);
+ * 如果不同viewtype之间不想换更换位置，则不呼唤数据就可以啦。
  */
 
 public class RecyclerViewActivity extends AppCompatActivity {
