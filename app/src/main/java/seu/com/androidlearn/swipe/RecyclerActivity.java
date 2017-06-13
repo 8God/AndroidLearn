@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,8 +64,14 @@ public class RecyclerActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            String content = mDatas.get(position);
+            final String content = mDatas.get(position);
             holder.tvContent.setText(content);
+            holder.tvContent.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(RecyclerActivity.this, "content: " + content, Toast.LENGTH_LONG).show();
+                }
+            });
         }
 
         @Override

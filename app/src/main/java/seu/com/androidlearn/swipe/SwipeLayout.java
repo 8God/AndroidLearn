@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
 /**
@@ -12,10 +13,14 @@ import android.view.ViewGroup;
  */
 
 public class SwipeLayout extends ViewGroup {
+    private static final int STATE_RESET = 1;
+    private static final int STATE_INTERRUPT = 2;
+    private int mState;
     private View mViewContent;
     private View mViewHide;
 
     float lastTouchX;
+    float lastTouchX1;
     float lastTouchY;
     public SwipeLayout(Context context) {
         this(context, null);
@@ -60,7 +65,32 @@ public class SwipeLayout extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return super.onInterceptTouchEvent(ev);
+        final int action = ev.getAction();
+        final float x = ev.getX();
+        final float y = ev.getY();
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                mState = STATE_RESET;
+                lastTouchX1 = x;
+                lastTouchX = x;
+                lastTouchY = y;
+                Log.e("Tag", "Interrupt: ACTION_DOWN");
+                return false;
+            case MotionEvent.ACTION_MOVE:
+                int xDiff = (int) Math.abs(lastTouchX1 - x);
+                if (xDiff > ViewConfiguration.get(getContext()).getScaledTouchSlop()) {
+                    mState = STATE_INTERRUPT;
+                }
+                Log.e("Tag", "Interrupt: ACTION_MOVE");
+                break;
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                Log.e("Tag", "Interrupt: ACTION_UP");
+                mState = STATE_RESET;
+                break;
+        }
+
+        return mState == STATE_INTERRUPT;
     }
 
     @Override
@@ -71,9 +101,10 @@ public class SwipeLayout extends ViewGroup {
             case MotionEvent.ACTION_DOWN:
                 lastTouchX = x;
                 lastTouchY = y;
-                Log.e("Tag", "lastTouchX： " + lastTouchX);
+                Log.e("Tag", "onTouchEvent: ACTION_DOWN： ");
                 break;
             case MotionEvent.ACTION_MOVE:
+                Log.e("Tag", "onTouchEvent: ACTION_MOVE： ");
                 //getScrollX() 就是当前view的左上角相对于母视图的左上角的X轴偏移量
                 int delta = (int) (lastTouchX - x);
                 //加了scroller就没有这种问题了
@@ -86,7 +117,7 @@ public class SwipeLayout extends ViewGroup {
                     break;
                 }
                 if (Math.abs(lastTouchX - x) > Math.abs(lastTouchY - y)) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
+                    getParent().requestDisallowInterceptTouchEvent(true);//横向移动的时候，机制recyclerview进行上下滚动
                 }
 //                else {
 //                    getParent().requestDisallowInterceptTouchEvent(false);
@@ -97,6 +128,7 @@ public class SwipeLayout extends ViewGroup {
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
+                Log.e("Tag", "onTouchEvent: ACTION_UP： ");
                 getParent().requestDisallowInterceptTouchEvent(false);
                 break;
             default:
