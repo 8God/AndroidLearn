@@ -27,7 +27,9 @@ public class RecyAdapter extends RecyclerView.Adapter<BaseViewHolder>{
         }
         this.list = list;
     }
-
+    public List<ItemEntity> getData() {
+        return list;
+    }
     @Override
     public int getItemViewType(int position) {
         return list.get(position).getType();
