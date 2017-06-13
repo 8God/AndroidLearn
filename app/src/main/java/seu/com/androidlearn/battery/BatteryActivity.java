@@ -15,6 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import seu.com.androidlearn.R;
 
+import static android.content.Intent.ACTION_BATTERY_CHANGED;
 import static android.content.Intent.ACTION_POWER_CONNECTED;
 import static android.content.Intent.ACTION_POWER_DISCONNECTED;
 import static android.os.BatteryManager.BATTERY_PLUGGED_AC;
@@ -38,16 +39,7 @@ public class BatteryActivity extends AppCompatActivity {
     BroadcastReceiver batteryChargeReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
-            boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
-                    status == BatteryManager.BATTERY_STATUS_FULL;
-            int chargePlug = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
-            boolean usbCharge = chargePlug == BATTERY_PLUGGED_USB;
-            boolean acCharge = chargePlug == BATTERY_PLUGGED_AC;
-            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-            float batteryPct = level / (float)scale;
-            tvBatteryInfo2.append("\nisCharging: " + isCharging + ", usbCharge: " + usbCharge + ", level: "+ level + ", scale: " + scale);
+            showBatteryInfo();
         }
     };
     @Override
@@ -73,7 +65,7 @@ public class BatteryActivity extends AppCompatActivity {
     }
 
     private void showBatteryInfo() {
-        IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        IntentFilter ifilter = new IntentFilter(ACTION_BATTERY_CHANGED);
         Intent batteryStatus = registerReceiver(null, ifilter);
         int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
         boolean isCharging = status == BatteryManager.BATTERY_STATUS_CHARGING ||
@@ -82,7 +74,9 @@ public class BatteryActivity extends AppCompatActivity {
         boolean usbCharge = chargePlug == BATTERY_PLUGGED_USB;
         boolean acCharge = chargePlug == BATTERY_PLUGGED_AC;
         StringBuilder sb = new StringBuilder();
-        sb.append("is charging: ").append(isCharging).append("\nchargePlug: ").append(usbCharge ? "useCharge" : "acCharge");
+        int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+        sb.append("is charging: ").append(isCharging).append("\nchargePlug: ").append(usbCharge ? "useCharge" : "acCharge").append(", level: " +level);
         tvBatteryInfo1.setText(sb.toString());
     }
 

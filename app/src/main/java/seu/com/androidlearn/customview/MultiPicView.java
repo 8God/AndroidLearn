@@ -43,7 +43,7 @@ public class MultiPicView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.save();
+        canvas.save();//save：锁画布，保存当前已经画了的pic
         canvas.translate(20, 120);
 //        for (Bitmap bitmap : mCards) {
 //            canvas.translate(120, 0);
@@ -52,11 +52,13 @@ public class MultiPicView extends View {
 
         for (int i = 0; i < mCards.length; i++) {
             canvas.translate(120, 0);
+            canvas.save();
             if (i < mCards.length - 1) {
                 canvas.clipRect(0, 0, 120, mCards[i].getHeight());
             }
             canvas.drawBitmap(mCards[i], 0, 0, null);
+            canvas.restore();
         }
-        canvas.restore();
+        canvas.restore();//返回到上一个save状态，其实就是栈的操作。
     }
 }
