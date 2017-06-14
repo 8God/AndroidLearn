@@ -2,6 +2,8 @@ package seu.com.androidlearn;
 
 import android.app.Application;
 
+import com.squareup.leakcanary.LeakCanary;
+
 /**
  * Created by wuxiangyu on 2017/6/6.
  */
@@ -20,5 +22,13 @@ public class MyApplication extends Application {
             e.printStackTrace();
         }
 
+        initLeakCanary();
+    }
+
+    private void initLeakCanary() {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(this);
     }
 }
