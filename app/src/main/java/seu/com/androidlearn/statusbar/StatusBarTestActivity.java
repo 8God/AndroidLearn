@@ -11,6 +11,8 @@ import seu.com.androidlearn.touch.TouchView;
 import seu.com.androidlearn.touch.TouchViewGroup;
 
 /**
+ * 对于透明主题，4.4的导航栏不会到达顶部，但是5.0的就会到达顶部。
+ * 设置了fitsSystemWindows以后，4.4没有改变，而5.0会做一个padding，此时状态栏的颜色就是window背景色
  * Created by wuxiangyu on 2017/6/6.
  */
 
