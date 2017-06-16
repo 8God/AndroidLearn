@@ -10,6 +10,7 @@ import butterknife.OnClick;
 import seu.com.androidlearn.battery.BatteryActivity;
 import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.dialog.AlertDialogActivity;
+import seu.com.androidlearn.js.WebviewActivity;
 import seu.com.androidlearn.leak.LeakActivity;
 import seu.com.androidlearn.recycle.RecyclerViewActivity;
 import seu.com.androidlearn.statusbar.StatusBarTestActivity;
@@ -61,5 +62,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnCreateCallback)
     protected void clickCreateCallback() {
         LeakActivity.launch(this);
+    }
+    @OnClick(R.id.btnClickWebView)
+    protected void clickWebView() {
+        WebviewActivity.launch(this);
     }
 }

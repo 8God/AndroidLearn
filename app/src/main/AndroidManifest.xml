@@ -24,6 +24,7 @@
         </activity>
 
         <activity android:name=".MainActivity"/>
+
         <activity
             android:name=".statusbar.StatusBarTestActivity"
             android:theme="@style/StatusBarTran"/>
@@ -34,6 +35,7 @@
         <activity android:name=".swipe.RecyclerActivity"/>
         <activity android:name=".recycle.RecyclerViewActivity"/>
         <activity android:name=".leak.LeakActivity"/>
+        <activity android:name=".js.WebviewActivity"/>
     </application>
 
 </manifest>

@@ -56,5 +56,11 @@
             android:layout_height="50dp"
             android:text="匿名内部类导致的内存泄漏"/>
 
+        <Button
+            android:id="@+id/btnClickWebView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="webview漏洞"/>
+
     </LinearLayout>
 </ScrollView>

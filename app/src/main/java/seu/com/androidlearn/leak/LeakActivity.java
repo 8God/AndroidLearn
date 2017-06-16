@@ -35,8 +35,21 @@ public class LeakActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leak);
         ButterKnife.bind(this);
+        runThread();
     }
 
+    public void runThread() {
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(60 * 1000 * 10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
+    }
     public static void launch(Activity activity) {
         Intent intent = new Intent();
         intent.setClass(activity, LeakActivity.class);
