@@ -1,7 +1,11 @@
 package seu.com.androidlearn;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.widget.Button;
 
 import butterknife.BindView;
@@ -10,6 +14,7 @@ import butterknife.OnClick;
 import seu.com.androidlearn.battery.BatteryActivity;
 import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.dialog.AlertDialogActivity;
+import seu.com.androidlearn.file.FileActivity;
 import seu.com.androidlearn.js.WebviewActivity;
 import seu.com.androidlearn.leak.LeakActivity;
 import seu.com.androidlearn.recycle.RecyclerViewActivity;
@@ -27,12 +32,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            getWindow().setStatusBarColor(getResources().getColor(R.color.C_C6B697));
+//        }
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
     }
 
     @OnClick(R.id.btnTouchEvent)
     protected void clickTouchButton() {
+        Log.e("Tag",findViewById(android.R.id.content)+ "");
         TouchTestActivity.launch(this);
     }
     @OnClick(R.id.btnStatusBar)
@@ -66,5 +75,27 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnClickWebView)
     protected void clickWebView() {
         WebviewActivity.launch(this);
+    }
+    @OnClick(R.id.btnFile)
+    protected void clickFile() {
+        FileActivity.launch(this);
+    }
+
+    @Override
+    protected void onPause() {
+        Log.e("Tag", "onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.e("Tag", "onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.e("Tag", "onDestroy");
+        super.onDestroy();
     }
 }

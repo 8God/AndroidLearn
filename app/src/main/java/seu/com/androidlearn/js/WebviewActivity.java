@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -22,9 +23,16 @@ public class WebviewActivity extends AppCompatActivity {
 
     @BindView(R.id.webview)
     WebView webview;
+    String data;
     public static void launch(Activity activity) {
         Intent intent = new Intent();
         intent.setClass(activity, WebviewActivity.class);
+        activity.startActivity(intent);
+    }
+    public static void launch(Activity activity, String data) {
+        Intent intent = new Intent();
+        intent.setClass(activity, WebviewActivity.class);
+        intent.putExtra("Data", data);
         activity.startActivity(intent);
     }
     @Override
@@ -40,7 +48,12 @@ public class WebviewActivity extends AppCompatActivity {
         webview.getSettings().setJavaScriptEnabled(true); ///------- 设置javascript 可用
         JSInterface = new JavaScriptInterface(this); ////------
         webview.addJavascriptInterface(JSInterface, "js2java"); // 设置js接口  第一个参数事件接口实例，第二个是实例在js中的别名，这个在js中会用到
-        webview.loadUrl("file:///android_asset/test.html");
+        data = getIntent().getStringExtra("Data");
+        if (TextUtils.isEmpty(data)) {
+            webview.loadUrl("file:///android_asset/test.html");
+        } else {
+            webview.loadData(data, "text/html", "UTF-8");
+        }
     }
     class JavaScriptInterface {
         Context mContext;

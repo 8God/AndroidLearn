@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.Button;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,7 +20,9 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 import seu.com.androidlearn.R;
+import seu.com.androidlearn.js.WebviewActivity;
 
 /**
  * Created by wuxiangyu on 2017/6/14.
@@ -29,13 +32,23 @@ public class LeakActivity extends AppCompatActivity {
     @BindView(R.id.btnCreateCallback)
     Button btnCreateCallback;
     Call call;
-
+    static ArrayList<Object> list;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leak);
         ButterKnife.bind(this);
-        runThread();
+//        runThread();
+        createData();
+    }
+
+    private void createData() {
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        for (int i =0; i < 10000; i++) {
+            list.add(new Object());
+        }
     }
 
     public void runThread() {
@@ -105,9 +118,10 @@ public class LeakActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnCreateCallback)
     public void clickCreateCallback() {
+        StringBuilder sb = new StringBuilder();
         OkHttpClient client = new OkHttpClient.Builder().build();
         final Request request = new Request.Builder()
-                .url("http://gank.io/api/history/content/2/1")
+                .url("http://game.play.163.com/zoo/zookeeper/iplayhybird/special/2017/promotion-tools/#/")
                 .build();
         Call call = client.newCall(request);
         call.enqueue(new Callback() {
@@ -123,12 +137,9 @@ public class LeakActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    Thread.sleep(5 * 1000);
-                    Log.e("Tag", " onResponse");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                ResponseBody body = response.body();
+                String string = body.string();
+                WebviewActivity.launch(LeakActivity.this, string);
             }
         });
     }
