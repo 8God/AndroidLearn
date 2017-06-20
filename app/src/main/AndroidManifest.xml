@@ -40,6 +40,7 @@
         <activity android:name=".leak.LeakActivity"/>
         <activity android:name=".js.WebviewActivity"/>
         <activity android:name=".file.FileActivity"/>
+        <activity android:name=".okhttpcache.OkHttpCacheActivity"/>
     </application>
 
 </manifest>

@@ -32,24 +32,14 @@ public class LeakActivity extends AppCompatActivity {
     @BindView(R.id.btnCreateCallback)
     Button btnCreateCallback;
     Call call;
-    static ArrayList<Object> list;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leak);
         ButterKnife.bind(this);
 //        runThread();
-        createData();
     }
 
-    private void createData() {
-        if (list == null) {
-            list = new ArrayList<>();
-        }
-        for (int i =0; i < 10000; i++) {
-            list.add(new Object());
-        }
-    }
 
     public void runThread() {
         new Thread() {
@@ -124,6 +114,8 @@ public class LeakActivity extends AppCompatActivity {
                 .url("http://game.play.163.com/zoo/zookeeper/iplayhybird/special/2017/promotion-tools/#/")
                 .build();
         Call call = client.newCall(request);
+        final long currentTime = System.currentTimeMillis();
+        Log.e("Tag", "start time: " + currentTime);
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -139,7 +131,8 @@ public class LeakActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 ResponseBody body = response.body();
                 String string = body.string();
-                WebviewActivity.launch(LeakActivity.this, string);
+                Log.e("Tag", string);
+                Log.e("Tag", "spend time: "+ (System.currentTimeMillis() - currentTime));
             }
         });
     }

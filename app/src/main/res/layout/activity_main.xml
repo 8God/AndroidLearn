@@ -68,5 +68,11 @@
             android:layout_height="50dp"
             android:text="File"/>
 
+        <Button
+            android:id="@+id/btnOkhttpCache"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="OkhttpCache"/>
+
     </LinearLayout>
 </ScrollView>

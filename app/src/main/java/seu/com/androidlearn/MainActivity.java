@@ -17,6 +17,7 @@ import seu.com.androidlearn.dialog.AlertDialogActivity;
 import seu.com.androidlearn.file.FileActivity;
 import seu.com.androidlearn.js.WebviewActivity;
 import seu.com.androidlearn.leak.LeakActivity;
+import seu.com.androidlearn.okhttpcache.OkHttpCacheActivity;
 import seu.com.androidlearn.recycle.RecyclerViewActivity;
 import seu.com.androidlearn.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.swipe.RecyclerActivity;
@@ -79,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnFile)
     protected void clickFile() {
         FileActivity.launch(this);
+    }
+
+    @OnClick(R.id.btnOkhttpCache)
+    protected void clickOkhttpCache() {
+        OkHttpCacheActivity.launch(this);
     }
 
     @Override
