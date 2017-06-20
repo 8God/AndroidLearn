@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -71,11 +72,12 @@ public class RecyclerViewActivity extends AppCompatActivity {
         final RecyAdapter adapter = new RecyAdapter(this);
         adapter.setData(getTestData());
         recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new MyItemDirection(this, DividerItemDecoration.VERTICAL));
         final GridLayoutManager manager = new GridLayoutManager(this, 2);
         manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                if (adapter.getItem(position).getType() == RecyAdapter.ITEM_HEADER) {
+                if (adapter.getItem(position).getType() == RecyAdapter.ITEM_HEADER) {//如果是header，则占两列
                     return manager.getSpanCount();
                 }
                 return 1;
