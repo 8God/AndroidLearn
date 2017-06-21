@@ -3,12 +3,15 @@ package seu.com.androidlearn.js;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.webkit.DownloadListener;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -54,8 +57,34 @@ public class WebviewActivity extends AppCompatActivity {
         } else {
             webview.loadData(data, "text/html", "UTF-8");
         }
+        webview.setWebViewClient(new MyWebViewClient());//url跳转在本webview内进行
+        webview.setDownloadListener(new DownloadListener() {//下载功能实现直接跳转到系统下载
+            @Override
+            public void onDownloadStart(String url, String userAgent,
+                                        String contentDisposition, String mimetype,
+                                        long contentLength) {
+                Uri uri = Uri.parse(url);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
     }
-    class JavaScriptInterface {
+    class MyWebViewClient extends WebViewClient {
+        //重写shouldOverrideUrlLoading方法，使点击链接后不使用其他的浏览器打开。
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//            view.loadUrl(url);
+            //如果不需要其他对点击链接事件的处理返回true，否则返回false
+            return false;
+
+        }
+
+
+
+    }
+
+
+class JavaScriptInterface {
         Context mContext;
         JavaScriptInterface(Context c) {
             mContext = c;
