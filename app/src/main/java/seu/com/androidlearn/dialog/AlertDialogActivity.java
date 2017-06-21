@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 
 import butterknife.BindView;
@@ -25,22 +25,28 @@ import seu.com.androidlearn.R;
 public class AlertDialogActivity extends AppCompatActivity {
     @BindView(R.id.btnShowAlertDialog)
     Button btnShowAlertDialog;
+    @BindView(R.id.btnCustonDialog)
+    Button btnCustonDialog;
 
     public static void launch(Activity activity) {
         Intent intent = new Intent();
         intent.setClass(activity, AlertDialogActivity.class);
         activity.startActivity(intent);
     }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alert_dialog);
         ButterKnife.bind(this);
-        Log.e("TAG", "onCreate________________");
     }
 
+    @OnClick(R.id.btnCustonDialog)
+    public void onCustomDialog(View view) {
+        new CustomDialog.Builder(this).cancel(false).build().show();
+    }
     @OnClick(R.id.btnShowAlertDialog)
-    public void onClick() {
+    public void onAlertClick() {
         /**
          * 屏幕旋转后，就不就保留该弹窗，且android.view.WindowLeaked
          */
