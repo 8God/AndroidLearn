@@ -14,6 +14,7 @@ import butterknife.OnClick;
 import seu.com.androidlearn.battery.BatteryActivity;
 import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.dialog.AlertDialogActivity;
+import seu.com.androidlearn.dynamicviewpager.ViewPagerActivity;
 import seu.com.androidlearn.file.FileActivity;
 import seu.com.androidlearn.js.WebviewActivity;
 import seu.com.androidlearn.leak.LeakActivity;
@@ -21,6 +22,7 @@ import seu.com.androidlearn.okhttpcache.OkHttpCacheActivity;
 import seu.com.androidlearn.recycle.RecyclerViewActivity;
 import seu.com.androidlearn.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.swipe.RecyclerActivity;
+import seu.com.androidlearn.test.TestActivity;
 import seu.com.androidlearn.touch.TouchTestActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
+    @OnClick(R.id.btnTtest)
+    protected void clickTest() {
+        Log.e("Tag",findViewById(android.R.id.content)+ "");
+        TestActivity.launch(this);
+    }
     @OnClick(R.id.btnTouchEvent)
     protected void clickTouchButton() {
         Log.e("Tag",findViewById(android.R.id.content)+ "");
@@ -85,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnOkhttpCache)
     protected void clickOkhttpCache() {
         OkHttpCacheActivity.launch(this);
+    }
+
+    @OnClick(R.id.btnViewpager)
+    protected void clickViewpager() {
+        ViewPagerActivity.launch(this);
     }
 
     @Override

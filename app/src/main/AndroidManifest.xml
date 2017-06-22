@@ -41,6 +41,8 @@
         <activity android:name=".js.WebviewActivity"/>
         <activity android:name=".file.FileActivity"/>
         <activity android:name=".okhttpcache.OkHttpCacheActivity"/>
+        <activity android:name=".test.TestActivity"/>
+        <activity android:name=".dynamicviewpager.ViewPagerActivity"/>
     </application>
 
 </manifest>

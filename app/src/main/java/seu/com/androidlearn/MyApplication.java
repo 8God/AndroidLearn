@@ -9,9 +9,11 @@ import com.squareup.leakcanary.LeakCanary;
  */
 
 public class MyApplication extends Application {
+    private static MyApplication instance;
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
         try {
             /**
              *有些地方会把耗时的初始化操作放在IntentService中操作：
@@ -23,6 +25,9 @@ public class MyApplication extends Application {
         }
 
         initLeakCanary();
+    }
+    public static MyApplication getInstance() {
+        return instance;
     }
 
     private void initLeakCanary() {
