@@ -33,9 +33,9 @@ public class TestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("Tag", "onCreate: " + this);
         setContentView(R.layout.activity_test);
         ButterKnife.bind(this);
+        Log.e("Tag", "onCreate: " + this.hashCode() + " : " +this.btnRecreate);
 //        testPackageManager();
     }
 
@@ -55,8 +55,14 @@ public class TestActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onDestroy() {
+        Log.e("Tag", "onDestroy: " + this.btnRecreate);
+        super.onDestroy();
+    }
+
+    @Override
     public void recreate() {
-        Log.e("Tag", "onCreate: " + this);
+        Log.e("Tag", "recreate: " + this.btnRecreate);
         super.recreate();
     }
 
