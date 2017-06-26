@@ -91,5 +91,11 @@
             android:layout_height="50dp"
             android:text="lib one, the same package not allow in module"/>
 
+        <Button
+            android:id="@+id/btnBroadcast"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="broadcast"/>
+
     </LinearLayout>
 </ScrollView>

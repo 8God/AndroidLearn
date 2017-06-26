@@ -9,6 +9,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import seu.com.androidlearn.battery.BatteryActivity;
+import seu.com.androidlearn.broadcast.BroadcastActivity;
 import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.dialog.AlertDialogActivity;
 import seu.com.androidlearn.dynamicviewpager.ViewPagerActivity;
@@ -106,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnLibone)
     protected void clicpLibone() {
         LibOneActivity.launch(this);
+    }
+    @OnClick(R.id.btnBroadcast)
+    protected void clicBroadcast() {
+        BroadcastActivity.launch(this);
     }
 
     @Override

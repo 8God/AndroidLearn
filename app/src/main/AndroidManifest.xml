@@ -16,6 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver android:name=".broadcast.MyBroadcast">
+            <intent-filter>
+                <action android:name="com.seu.cc.test"/>
+            </intent-filter>
+        </receiver>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -43,6 +48,7 @@
         <activity android:name=".okhttpcache.OkHttpCacheActivity"/>
         <activity android:name=".test.TestActivity"/>
         <activity android:name=".dynamicviewpager.ViewPagerActivity"/>
+        <activity android:name=".broadcast.BroadcastActivity"/>
     </application>
 
 </manifest>
