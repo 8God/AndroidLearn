@@ -1,11 +1,8 @@
 package seu.com.androidlearn;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.ViewGroup;
-import android.webkit.WebSettings;
 import android.widget.Button;
 
 import butterknife.BindView;
@@ -24,6 +21,7 @@ import seu.com.androidlearn.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.swipe.RecyclerActivity;
 import seu.com.androidlearn.test.TestActivity;
 import seu.com.androidlearn.touch.TouchTestActivity;
+import seu.com.libone.LibOneActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,8 +31,15 @@ public class MainActivity extends AppCompatActivity {
     Button btnStatusBar;
 
     @Override
+    public void recreate() {
+        Log.e("Tag", "recreate");
+        super.recreate();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("Tag", "onCreate");
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 //            getWindow().setStatusBarColor(getResources().getColor(R.color.C_C6B697));
 //        }
@@ -97,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnViewpager)
     protected void clickViewpager() {
         ViewPagerActivity.launch(this);
+    }
+    @OnClick(R.id.btnLibone)
+    protected void clicpLibone() {
+        LibOneActivity.launch(this);
     }
 
     @Override

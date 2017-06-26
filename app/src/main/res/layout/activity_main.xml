@@ -85,5 +85,11 @@
             android:layout_height="50dp"
             android:text="dynamic viewpager"/>
 
+        <Button
+            android:id="@+id/btnLibone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="lib one, the same package not allow in module"/>
+
     </LinearLayout>
 </ScrollView>
