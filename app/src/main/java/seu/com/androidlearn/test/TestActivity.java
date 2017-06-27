@@ -37,11 +37,20 @@ public class TestActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         Log.e("Tag", "onCreate: " + this.hashCode() + " : " +this.btnRecreate);
 //        testPackageManager();
+        testIntent();
+    }
+    private void testIntent() {
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        if (bundle == null) {
+            Log.e("Tag", "bundle can be null");
+        } else {
+            Log.e("Tag", "bundle will not be null");
+        }
     }
 
     /**
      * 获取本地不存在的包名，直接奔溃，这就导致了downloadmanager奔溃的问题，有些手机就直接阉割了。。。
-     *
      */
     public void testPackageManager() {
         PackageManager manager = MyApplication.getInstance().getPackageManager();
