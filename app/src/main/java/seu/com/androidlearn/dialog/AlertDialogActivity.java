@@ -20,6 +20,7 @@ import seu.com.androidlearn.R;
  * Created by wuxiangyu on 2017/6/12.
  * 谷歌的官方不建议使用ProgressDialog，这里我们会使用官方推荐的DialogFragment来创建我的加载框
  * 在屏幕旋转导致activity recreate的时候，就会导致该progress没有句柄，从而无法关闭之前的dialog。
+ * dialogfragment旋转屏幕后夜会自动显示
  */
 
 public class AlertDialogActivity extends AppCompatActivity {
