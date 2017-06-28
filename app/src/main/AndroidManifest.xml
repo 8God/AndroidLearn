@@ -23,11 +23,20 @@
         </receiver>
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/SplashTheme"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="wxy"/>
             </intent-filter>
         </activity>
 
@@ -46,7 +55,8 @@
         <activity android:name=".js.WebviewActivity"/>
         <activity android:name=".file.FileActivity"/>
         <activity android:name=".okhttpcache.OkHttpCacheActivity"/>
-        <activity android:name=".test.TestActivity"/>
+        <activity android:name=".test.TestActivity">
+        </activity>
         <activity android:name=".dynamicviewpager.ViewPagerActivity"/>
         <activity android:name=".broadcast.BroadcastActivity"/>
     </application>
