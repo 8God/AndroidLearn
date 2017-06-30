@@ -12,11 +12,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
-import java.util.List;
 
 import seu.com.androidlearn.R;
 
 /**
+ * 感觉还是很强大的
  * Created by wuxiangyu on 2017/6/30.
  */
 
