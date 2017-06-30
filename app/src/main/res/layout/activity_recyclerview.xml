@@ -18,6 +18,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="GridLayout"/>
+        <Button
+            android:id="@+id/btnStickHead"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="StickHead"/>
     </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

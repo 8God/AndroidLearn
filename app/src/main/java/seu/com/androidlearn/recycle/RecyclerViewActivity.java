@@ -67,6 +67,35 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
         return list;
     }
+    private List<ItemEntity> getTestDataNoHead() {
+        List<ItemEntity> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                ItemEntity temp = new ItemEntity();
+                temp.setType(RecyAdapter.ITEM_CONTENT);
+                temp.setGroupName("Group: "+ i);
+                temp.setName("Content: "+ j+ " from Header: "+ i);
+                list.add(temp);
+            }
+        }
+        return list;
+    }
+
+    @OnClick(R.id.btnStickHead)
+    public void clickStickHead(View view) {
+        final RecyAdapter adapter = new RecyAdapter(this);
+        adapter.setData(getTestDataNoHead());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        StickItemDirection stickItemDirection = new StickItemDirection(this);
+        stickItemDirection.setGroupListener(new GroupListener() {
+            @Override
+            public String getGroupName(int position) {
+                return getTestDataNoHead().get(position).getGroupName();
+            }
+        });
+        recyclerView.addItemDecoration(stickItemDirection);
+    }
     @OnClick(R.id.btnGrid)
     public void clickGrid(View view) {
         final RecyAdapter adapter = new RecyAdapter(this);
