@@ -97,5 +97,11 @@
             android:layout_height="50dp"
             android:text="broadcast"/>
 
+        <Button
+            android:id="@+id/btnIOC_Runtime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="ioc_runtime"/>
+
     </LinearLayout>
 </ScrollView>
