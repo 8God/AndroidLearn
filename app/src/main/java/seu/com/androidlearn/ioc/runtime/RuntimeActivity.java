@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import seu.cc.test.GetMsg;
 
+import seu.cc.ann.BindView;
 import seu.com.androidlearn.R;
 import seu.iocruntime.ViewInjectUtils;
 import seu.iocruntime.ann.ContentView;
@@ -23,9 +24,10 @@ import seu.iocruntime.ann.ViewInject;
  */
 @ContentView(R.layout.activity_runtime)
 public class RuntimeActivity extends AppCompatActivity {
-    @ViewInject(R.id.btnClick)
-    Button btnClick;
-
+    @ViewInject(R.id.btnRuntime_ioc)
+    Button btnRuntime_ioc;
+    @BindView(R.id.btnClass_ioc)
+    Button btnClass_ioc;
     public static void launch(Activity activity) {
         Intent intent = new Intent();
         intent.setClass(activity, RuntimeActivity.class);
@@ -39,8 +41,8 @@ public class RuntimeActivity extends AppCompatActivity {
         ViewInjectUtils.inject(this);
     }
 
-    @OnClick(R.id.btnClick)
-    public void clickTest(View view) {
+    @OnClick(R.id.btnRuntime_ioc)
+    public void clickRuntime(View view) {
         Toast.makeText(this, "show ioc_click", Toast.LENGTH_LONG).show();
     }
     @GetMsg(id=11)

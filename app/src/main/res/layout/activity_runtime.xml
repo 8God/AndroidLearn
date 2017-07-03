@@ -3,8 +3,13 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:id="@+id/btnClick"
+        android:id="@+id/btnRuntime_ioc"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="ioc_click"/>
+        android:text="runtime_ioc"/>
+    <Button
+        android:id="@+id/btnClass_ioc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="class_ioc"/>
 </LinearLayout>
