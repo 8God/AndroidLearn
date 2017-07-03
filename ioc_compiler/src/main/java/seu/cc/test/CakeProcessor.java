@@ -1,10 +1,13 @@
 package seu.cc.test;
 
+import com.google.auto.service.AutoService;
+
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Messager;
+import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
@@ -21,6 +24,7 @@ import javax.tools.Diagnostic;
  * https://lizhaoxuan.github.io/2016/07/17/apt-run_demo/
  */
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
+@AutoService(Processor.class)
 public class CakeProcessor extends AbstractProcessor {
     /**
      * 表示该Processor处理哪些注解
