@@ -1,1 +1,1 @@
-include ':app', ':libone', ':iocruntime'
+include ':app', ':libone', ':iocruntime', ':ioc_compiler', ':ioc_api'
