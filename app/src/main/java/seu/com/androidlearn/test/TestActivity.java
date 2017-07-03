@@ -51,6 +51,7 @@ public class TestActivity extends AppCompatActivity {
 
     /**
      * 获取本地不存在的包名，直接奔溃，这就导致了downloadmanager奔溃的问题，有些手机就直接阉割了。。。
+     *
      */
     public void testPackageManager() {
         PackageManager manager = MyApplication.getInstance().getPackageManager();
