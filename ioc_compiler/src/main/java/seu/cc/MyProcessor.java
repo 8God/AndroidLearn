@@ -84,14 +84,14 @@ public class MyProcessor extends AbstractProcessor {
         Set<? extends Element> elements = roundEnvironment.getElementsAnnotatedWith(BindView.class);
         //收集信息
         for (Element element : elements) {
-            if (!checkAnnotationValid(element, BindView.class)) {
-                return false;
-            }
+
             //field type
             VariableElement variableElement = (VariableElement) element;
+            mMessager.printMessage(Diagnostic.Kind.NOTE, "variableElement: " + variableElement.getSimpleName());
             //TypeElement
             TypeElement typeElement = (TypeElement) variableElement.getEnclosingElement();
-            String qualifiedName = typeElement.getQualifiedName().toString();
+            String qualifiedName = typeElement.getQualifiedName().toString();//该名称包含了包名+类名
+            mMessager.printMessage(Diagnostic.Kind.NOTE, "typeElement: "+ typeElement.getSimpleName() + ";qualifiedName: "+ qualifiedName);
             ProxyInfo proxyInfo = mProxyMap.get(qualifiedName);
             if (proxyInfo == null) {
                 proxyInfo = new ProxyInfo(mElementUtils, typeElement);
@@ -106,9 +106,10 @@ public class MyProcessor extends AbstractProcessor {
         for (String key : mProxyMap.keySet()) {
             ProxyInfo proxyInfo = mProxyMap.get(key);
             try {
+                mMessager.printMessage(Diagnostic.Kind.NOTE, "proxyFullName: "+ proxyInfo.getProxyClassFullName() + "; TypeElement: "+ proxyInfo.getTypeElement().getSimpleName());
                 JavaFileObject sourceFile = mFileUtils.createSourceFile(proxyInfo.getProxyClassFullName(), proxyInfo.getTypeElement());
                 Writer writer = sourceFile.openWriter();
-                writer.write(proxyInfo.generateJavaCode());
+                writer.write(proxyInfo.getJavCode());
                 writer.flush();
                 writer.close();
             } catch (IOException e) {
