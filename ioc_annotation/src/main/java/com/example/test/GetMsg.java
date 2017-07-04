@@ -1,4 +1,4 @@
-package seu.cc.test;
+package com.example.test;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

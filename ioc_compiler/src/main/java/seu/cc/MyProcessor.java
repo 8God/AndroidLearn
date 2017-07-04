@@ -1,5 +1,6 @@
 package seu.cc;
 
+import com.example.ann.BindView;
 import com.google.auto.service.AutoService;
 
 import java.io.IOException;
@@ -23,8 +24,6 @@ import javax.lang.model.element.VariableElement;
 import javax.lang.model.util.Elements;
 import javax.tools.Diagnostic;
 import javax.tools.JavaFileObject;
-
-import seu.cc.ann.BindView;
 
 /**
  * Created by wuxiangyu on 2017/7/3.

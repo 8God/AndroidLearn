@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import seu.cc.compiler.MyIoc;
-import seu.cc.test.GetMsg;
 
 import seu.cc.ann.BindView;
 import seu.com.androidlearn.R;
@@ -55,7 +54,6 @@ public class RuntimeActivity extends AppCompatActivity {
     public void clickRuntime(View view) {
         Toast.makeText(this, "show ioc_click", Toast.LENGTH_LONG).show();
     }
-    @GetMsg(id=11)
     public void testGetMsg(String name) {
         Log.e("Tag", "TestGetMsg");
     }

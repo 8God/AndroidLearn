@@ -1,5 +1,6 @@
 package seu.cc.test;
 
+import com.example.test.GetMsg;
 import com.google.auto.service.AutoService;
 
 import java.util.LinkedHashSet;
