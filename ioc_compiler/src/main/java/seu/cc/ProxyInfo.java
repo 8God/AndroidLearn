@@ -33,8 +33,9 @@ public class ProxyInfo {
     public String getJavCode() {
         StringBuilder sb = new StringBuilder();
         sb.append("package ").append(packageName).append(";\n\n");
-        sb.append("public class ").append(proxyClassName).append(" {\n");
-        sb.append(" public void inject (").append(typeElement.getQualifiedName()).append(" activity, Object source) {\n");
+        sb.append("import seu.cc.compiler.ViewInjector;\n");
+        sb.append("public class ").append(proxyClassName).append(" implements ViewInjector<"+typeElement.getQualifiedName()+"> {\n");
+        sb.append("public void inject (").append(typeElement.getQualifiedName()).append(" activity, Object source) {\n");
         sb.append("if (source instanceof android.app.Activity) {\n");
         for (int id : injectVariables.keySet()) {
             VariableElement element = injectVariables.get(id);
@@ -59,7 +60,7 @@ public class ProxyInfo {
 //        StringBuilder builder = new StringBuilder();
 //        builder.append("// Generated code. Do not modify!\n");
 //        builder.append("package ").append(packageName).append(";\n\n");
-////        builder.append("import com.zhy.ioc.*;\n");
+//        builder.append("import com.zhy.ioc.*;\n");
 //        builder.append('\n');
 //
 //        builder.append("public class ").append(proxyClassName).append(" implements " + ProxyInfo.PROXY + "<" + typeElement.getQualifiedName() + ">");

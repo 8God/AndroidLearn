@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import seu.cc.compiler.MyIoc;
 import seu.cc.test.GetMsg;
 
 import seu.cc.ann.BindView;
@@ -39,6 +40,15 @@ public class RuntimeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_runtime);
         ViewInjectUtils.inject(this);
+        MyIoc.inject(this);
+        if (btnClass_ioc != null) {
+            btnClass_ioc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(RuntimeActivity.this, "show ioc_click", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
     }
 
     @OnClick(R.id.btnRuntime_ioc)

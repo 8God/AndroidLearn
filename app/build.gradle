@@ -32,6 +32,7 @@ android {
     }
     lintOptions {
         abortOnError false
+        disable "ResourceType"
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
@@ -55,5 +56,6 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile project(':libone')
     compile project(':iocruntime')
-    compile files('libs/javalib.jar')
+    compile project(':ioc_api')
+    annotationProcessor project(':ioc_compiler')
 }

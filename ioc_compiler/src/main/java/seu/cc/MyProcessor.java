@@ -70,7 +70,7 @@ public class MyProcessor extends AbstractProcessor {
     /**
      * Element：
      * VariableElement：代表一般成员变量
-     * ExecutableElement：代表类中非法
+     * ExecutableElement：代表类中方法，包括构造函数
      * TypeElement：代表类
      * PackageElement：代表Package
      * <p>
