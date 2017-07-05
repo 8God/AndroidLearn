@@ -8,4 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="recreate"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <Button
+            android:id="@+id/btnTestShade"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="dddddddddd"
+            android:background="#00ff00"/>
+        <View
+            android:id="@+id/viewShade"
+            android:background="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
 </LinearLayout>

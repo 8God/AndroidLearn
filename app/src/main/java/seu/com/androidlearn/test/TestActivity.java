@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,6 +25,10 @@ public class TestActivity extends AppCompatActivity {
 
     @BindView(R.id.btnRecreate)
     Button btnRecreate;
+    @BindView(R.id.btnTestShade)
+    Button btnTestShade;
+    @BindView(R.id.viewShade)
+    View viewShade;
 
     public static void launch(Activity activity) {
         Intent intent = new Intent();
@@ -38,6 +44,15 @@ public class TestActivity extends AppCompatActivity {
         Log.e("Tag", "onCreate: " + this.hashCode() + " : " +this.btnRecreate);
 //        testPackageManager();
         testIntent();
+    }
+
+    @OnClick(R.id.viewShade)
+    public void clickShadeView() {
+        Toast.makeText(this, "shade View", Toast.LENGTH_LONG).show();
+    }
+    @OnClick(R.id.btnTestShade)
+    public void clickShadeButton() {
+        Toast.makeText(this, "shade button", Toast.LENGTH_LONG).show();
     }
     private void testIntent() {
         Intent intent = getIntent();
