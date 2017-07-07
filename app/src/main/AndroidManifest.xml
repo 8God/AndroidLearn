@@ -63,6 +63,7 @@
         <activity android:name=".dynamicviewpager.ViewPagerActivity"/>
         <activity android:name=".broadcast.BroadcastActivity"/>
         <activity android:name=".ioc.runtime.RuntimeActivity"/>
+        <activity android:name=".hook.HookActivity"/>
     </application>
 
 </manifest>

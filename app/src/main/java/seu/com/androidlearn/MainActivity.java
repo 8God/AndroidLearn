@@ -14,6 +14,7 @@ import seu.com.androidlearn.customview.MultiPicActivity;
 import seu.com.androidlearn.dialog.AlertDialogActivity;
 import seu.com.androidlearn.dynamicviewpager.ViewPagerActivity;
 import seu.com.androidlearn.file.FileActivity;
+import seu.com.androidlearn.hook.HookActivity;
 import seu.com.androidlearn.ioc.runtime.RuntimeActivity;
 import seu.com.androidlearn.js.WebviewActivity;
 import seu.com.androidlearn.leak.LeakActivity;
@@ -116,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnIOC_Runtime)
     protected void btnIOC_Runtime() {
         RuntimeActivity.launch(this);
+    }
+    @OnClick(R.id.btn_hook)
+    protected void btn_hook() {
+        HookActivity.launch(this);
     }
 
     @Override
