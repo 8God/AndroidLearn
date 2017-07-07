@@ -1,4 +1,4 @@
-package seu.com.libone;
+package com.example.baseandroidlib;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("seu.com.libone.test", appContext.getPackageName());
+        assertEquals("com.example.baseandroidlib.test", appContext.getPackageName());
     }
 }

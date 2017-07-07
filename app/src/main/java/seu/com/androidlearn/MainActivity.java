@@ -24,7 +24,6 @@ import seu.com.androidlearn.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.swipe.RecyclerActivity;
 import seu.com.androidlearn.test.TestActivity;
 import seu.com.androidlearn.touch.TouchTestActivity;
-import seu.com.libone.LibOneActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -106,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
     protected void clickViewpager() {
         ViewPagerActivity.launch(this);
     }
-    @OnClick(R.id.btnLibone)
-    protected void clicpLibone() {
-        LibOneActivity.launch(this);
+    @OnClick(R.id.btnBaseLibrary)
+    protected void clicpBaseLibrary() {
+        com.example.baseandroidlib.TestActivity.launch(this);
     }
     @OnClick(R.id.btnBroadcast)
     protected void clicBroadcast() {

@@ -1,4 +1,4 @@
-package seu.com.libone;
+package com.example.baseandroidlib;
 
 import org.junit.Test;
 

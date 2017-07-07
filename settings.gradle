@@ -1,1 +1,1 @@
-include ':app', ':libone', ':iocruntime', ':ioc_compiler', ':ioc_api', ':ioc_annotation'
+include ':app', ':iocruntime', ':ioc_compiler', ':ioc_api', ':ioc_annotation', ':baseandroidlib'
