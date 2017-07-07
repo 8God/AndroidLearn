@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
-
+apply from : "../config.gradle"
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -15,25 +15,7 @@ android {
 //            enabled true
 //        }
     }
-    signingConfigs { //gradle assembleRelease
-        release {
-            storeFile file("google.keystore")
-            storePassword keystorePassword
-            keyAlias "iplay_google"
-            keyPassword keystorePassword
-        }
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-    }
-    lintOptions {
-        abortOnError false
-        disable "ResourceType"
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
@@ -57,5 +39,11 @@ dependencies {
     compile project(':iocruntime')
     compile project(':ioc_api')
     annotationProcessor project(':ioc_compiler')
-    compile project(':baseandroidlib')
+
+    if (rootProject.ext.isBuildMudle.toBoolean()) {
+
+    } else {
+        compile project(':baseandroidlib')
+    }
+
 }

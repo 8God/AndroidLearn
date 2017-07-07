@@ -1,4 +1,10 @@
-apply plugin: 'com.android.library'
+
+if (rootProject.ext.isBuildMudle.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -27,4 +33,6 @@ dependencies {
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibraryVersion}"
     testCompile 'junit:junit:4.12'
 
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }
