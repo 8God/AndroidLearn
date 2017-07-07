@@ -41,6 +41,9 @@ public class FileActivity extends AppCompatActivity {
         String sdcard = Environment.getExternalStorageDirectory().getPath();
         File file = new File(sdcard + "/Android/data/com.netease.iplay");
         String[] list = file.list();
+        if (list == null) {
+            return;
+        }
         Log.e("Tag", list[0]);
         File files = new File(file, list[0]);
         File[] fileStrs = files.listFiles();

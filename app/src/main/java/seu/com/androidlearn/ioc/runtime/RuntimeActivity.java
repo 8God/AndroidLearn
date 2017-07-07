@@ -42,19 +42,17 @@ public class RuntimeActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_runtime);
         ViewInjectUtils.inject(this);
         MyIoc.inject(this);
-        if (btnClass_ioc != null) {
             btnClass_ioc.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(RuntimeActivity.this, "show ioc_click", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RuntimeActivity.this, "show ioc_click_class", Toast.LENGTH_LONG).show();
                 }
             });
-        }
     }
 
     @OnClick(R.id.btnRuntime_ioc)
     public void clickRuntime(View view) {
-        Toast.makeText(this, "show ioc_click", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "show ioc_click_runtime", Toast.LENGTH_LONG).show();
     }
     @GetMsg(id = 10)
     public void testGetMsg(String name) {
