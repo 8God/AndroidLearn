@@ -21,7 +21,7 @@ android {
             if (rootProject.ext.isBuildMudle.toBoolean()) {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             } else {
-                Manifest.srcFile 'src/main/AndroidManifest.xml'
+                manifest.srcFile 'src/main/AndroidManifest.xml'
             }
         }
     }
