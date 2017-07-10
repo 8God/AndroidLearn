@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 
+import com.example.modulea.ModuleAMainActivity;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -126,6 +128,14 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_hook)
     protected void btn_hook() {
         HookActivity.launch(this);
+    }
+    @OnClick(R.id.btn_module_a)
+    protected void btnModulea() {
+        ModuleAMainActivity.launch(this);
+    }
+    @OnClick(R.id.btn_module_b)
+    protected void btnModuleb() {
+        ModuleAMainActivity.launch(this);
     }
 
     @Override

@@ -1,10 +1,4 @@
-
-if (rootProject.ext.isBuildMudle.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
-}
-apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.android.library'
 //apply from : "../config.gradle"
 
 android {
@@ -16,10 +10,18 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
+    sourceSets {
+        main {
+            if (rootProject.ext.isBuildMudle.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+    resourcePrefix "modulea_"
 }
-
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -27,7 +29,4 @@ dependencies {
     })
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibraryVersion}"
     testCompile 'junit:junit:4.12'
-
-    compile 'com.jakewharton:butterknife:8.6.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 }

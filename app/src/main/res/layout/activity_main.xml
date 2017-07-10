@@ -109,5 +109,17 @@
             android:layout_height="50dp"
             android:text="button_hook"/>
 
+        <Button
+            android:id="@+id/btn_module_a"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="module_a"/>
+
+        <Button
+            android:id="@+id/btn_module_b"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="module_b"/>
+
     </LinearLayout>
 </ScrollView>

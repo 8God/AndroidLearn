@@ -44,6 +44,9 @@ dependencies {
 
     } else {
         compile project(':baseandroidlib')
+        compile project(':module_a')
+        compile project(':module_b')
+
     }
 
 }
