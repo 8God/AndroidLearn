@@ -39,7 +39,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-    compile project(':iocruntime')
+    compile project(':ioc_runtime')
     compile project(':ioc_api')
     annotationProcessor project(':ioc_compiler')
     compile('com.alibaba:arouter-api:1.2.1.1')
