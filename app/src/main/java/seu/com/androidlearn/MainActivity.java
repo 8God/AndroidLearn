@@ -5,8 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 
-//import com.example.modulea.ModuleAMainActivity;
-//import com.example.moduleb.ModuleBMainActivity;
+
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.moduleb.ModuleBMainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btnTtest)
     protected void clickTest() {
         Log.e("Tag",findViewById(android.R.id.content)+ "");
-        TestActivity.launch(this);
+
+        ARouter.getInstance().build("/test/testactivity").navigation();
+//        TestActivity.launch(this);
     }
     @OnClick(R.id.btnTouchEvent)
     protected void clickTouchButton() {
@@ -133,10 +136,12 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_module_a)
     protected void btnModulea() {
 //        ModuleAMainActivity.launch(this);
+        ARouter.getInstance().build("/modulea/activity").navigation();
     }
     @OnClick(R.id.btn_module_b)
     protected void btnModuleb() {
 //        ModuleBMainActivity.launch(this);
+        ARouter.getInstance().build("/moduleb/activity").navigation();
     }
 
     @Override

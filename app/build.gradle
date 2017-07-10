@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.jakewharton.butterknife'
 apply from : "../config.gradle"
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -14,6 +15,11 @@ android {
 //        jackOptions {
 //            enabled true
 //        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
 
     compileOptions {
@@ -27,9 +33,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibraryVersion}"
-    compile "com.android.support:recyclerview-v7:${rootProject.ext.supportLibraryVersion}"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
@@ -39,7 +42,8 @@ dependencies {
     compile project(':iocruntime')
     compile project(':ioc_api')
     annotationProcessor project(':ioc_compiler')
-
+    compile('com.alibaba:arouter-api:1.2.1.1')
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.2.1'
     if (rootProject.ext.isBuildMudle.toBoolean()) {
         compile project(':module_base')
     } else {

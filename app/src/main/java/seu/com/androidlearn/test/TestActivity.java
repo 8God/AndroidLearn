@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -20,7 +22,7 @@ import seu.com.androidlearn.R;
 /**
  * Created by wuxiangyu on 2017/6/22.
  */
-
+@Route(path = "/test/testactivity")
 public class TestActivity extends AppCompatActivity {
 
     @BindView(R.id.btnRecreate)

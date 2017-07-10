@@ -1,4 +1,7 @@
 android {
+//    defaultConfig {//aRouter
+//
+//    }
     signingConfigs { //gradle assembleRelease
         release {
             storeFile file("google.keystore")

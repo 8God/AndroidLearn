@@ -1,18 +1,21 @@
 package seu.com.androidlearn;
 
 import android.app.Application;
+import android.util.Log;
 
+import com.example.baseandroidlib.BaseApplication;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
  * Created by wuxiangyu on 2017/6/6.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends BaseApplication {
     private static MyApplication instance;
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.e("Tag", "MyApplication: onCreate");
         instance = this;
         try {
             /**

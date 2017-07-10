@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.module_a.R;
 
 /**
  * Created by wuxiangyu on 2017/7/10.
  */
 
+@Route(path = "/modulea/activity")
 public class ModuleAMainActivity extends AppCompatActivity {
     public static void launch(Activity activity) {
         Intent intent = new Intent();
