@@ -10,6 +10,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <Button
+            android:id="@+id/btn_module_a"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="module_a"/>
+
+        <Button
+            android:id="@+id/btn_module_b"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="module_b"/>
+
+        <Button
             android:id="@+id/btnTtest"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -108,18 +120,6 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="button_hook"/>
-
-        <Button
-            android:id="@+id/btn_module_a"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="module_a"/>
-
-        <Button
-            android:id="@+id/btn_module_b"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="module_b"/>
 
     </LinearLayout>
 </ScrollView>

@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 
-import com.example.modulea.ModuleAMainActivity;
+//import com.example.modulea.ModuleAMainActivity;
+//import com.example.moduleb.ModuleBMainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btnBaseLibrary)
     protected void clicpBaseLibrary() {
-        com.example.baseandroidlib.TestActivity.launch(this);
+//        com.example.baseandroidlib.TestActivity.launch(this);
     }
     @OnClick(R.id.btnBroadcast)
     protected void clicBroadcast() {
@@ -131,11 +132,11 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btn_module_a)
     protected void btnModulea() {
-        ModuleAMainActivity.launch(this);
+//        ModuleAMainActivity.launch(this);
     }
     @OnClick(R.id.btn_module_b)
     protected void btnModuleb() {
-        ModuleAMainActivity.launch(this);
+//        ModuleBMainActivity.launch(this);
     }
 
     @Override

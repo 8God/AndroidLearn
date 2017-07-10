@@ -19,6 +19,6 @@ public class ModuleBMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_b_main);
+        setContentView(R.layout.moduleb_activity_main);
     }
 }

@@ -41,12 +41,10 @@ dependencies {
     annotationProcessor project(':ioc_compiler')
 
     if (rootProject.ext.isBuildMudle.toBoolean()) {
-
+        compile project(':module_base')
     } else {
-        compile project(':baseandroidlib')
         compile project(':module_a')
         compile project(':module_b')
-
     }
 
 }
