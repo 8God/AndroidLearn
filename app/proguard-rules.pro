@@ -55,4 +55,5 @@
 -keep class * extends java.lang.annotation.Annotation { *; }
 -keep interface * extends java.lang.annotation.Annotation { *; }
 
--keep class * extends seu.cc.compiler.ViewInjector
+#-keep class * extends seu.cc.compiler.ViewInjector
+-include proguard-ioc.pro
