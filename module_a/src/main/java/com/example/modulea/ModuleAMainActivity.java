@@ -38,19 +38,8 @@ public class ModuleAMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modulea_activity_main);
         ButterKnife.bind(this);
-        initView();
-        btnToast.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ARouter.getInstance().build("/moduleb/activity").navigation();
-            }
-        });
     }
 
-    private void initView() {
-//        btnGoModuleB = (Button) findViewById(R.id.btnGoModuleB);
-//        btnToast = (Button) findViewById(R.id.btnToast);
-    }
 
     @OnClick(R2.id.btnGoModuleB)
     public void onViewClicked() {
