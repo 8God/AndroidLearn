@@ -3,6 +3,7 @@ if (rootProject.ext.isBuildMudle.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'
 apply from: "../config.gradle"
 
 android {
@@ -26,6 +27,10 @@ android {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/debug文件夹下的所有文件,一般会存放testactivity，防止打包进去
+                    exclude 'debug/**'
+                }
             }
         }
     }
