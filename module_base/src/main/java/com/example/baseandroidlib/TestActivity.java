@@ -8,12 +8,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import butterknife.BindView;
+
 /**
  * Created by wuxiangyu on 2017/7/7.
  */
 
 public class TestActivity extends AppCompatActivity {
-//    @BindView(R2.id.btnLibd)
+    @BindView(R2.id.btnLibd)
     Button btnLib;
 
     public static void launch(Activity activity) {

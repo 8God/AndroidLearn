@@ -4,7 +4,7 @@ if (rootProject.ext.isBuildMudle.toBoolean()) {
     apply plugin: 'com.android.library'
 }
 apply plugin: 'com.jakewharton.butterknife'
-apply from : "../config.gradle"
+apply from: "../config.gradle"
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
