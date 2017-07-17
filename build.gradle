@@ -33,7 +33,7 @@ ext {
     versionCode = 100
     versionName = "1.0.0"
     javaVersion = JavaVersion.VERSION_1_7
-    isBuildMudle = true
+    isBuildMudle = false
     // App dependencies version
     supportLibraryVersion = "25.2.0"
 

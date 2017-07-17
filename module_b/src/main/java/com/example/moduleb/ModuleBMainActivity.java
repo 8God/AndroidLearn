@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -38,5 +39,6 @@ public class ModuleBMainActivity extends AppCompatActivity {
     @OnClick(R2.id.btnGoModuleA)
     public void onViewClicked() {
         ARouter.getInstance().build("/modulea/activity").navigation();
+        Toast.makeText(this, "btnGoModuleA", Toast.LENGTH_SHORT).show();
     }
 }
