@@ -11,22 +11,21 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import seu.com.androidlearn.battery.BatteryActivity;
-import seu.com.androidlearn.broadcast.BroadcastActivity;
-import seu.com.androidlearn.customview.MultiPicActivity;
-import seu.com.androidlearn.dialog.AlertDialogActivity;
-import seu.com.androidlearn.dynamicviewpager.ViewPagerActivity;
-import seu.com.androidlearn.file.FileActivity;
-import seu.com.androidlearn.hook.HookActivity;
-import seu.com.androidlearn.ioc.runtime.RuntimeActivity;
-import seu.com.androidlearn.js.WebviewActivity;
-import seu.com.androidlearn.leak.LeakActivity;
-import seu.com.androidlearn.okhttpcache.OkHttpCacheActivity;
-import seu.com.androidlearn.recycle.RecyclerViewActivity;
-import seu.com.androidlearn.statusbar.StatusBarTestActivity;
-import seu.com.androidlearn.swipe.RecyclerActivity;
-import seu.com.androidlearn.test.TestActivity;
-import seu.com.androidlearn.touch.TouchTestActivity;
+import seu.com.androidlearn.test.battery.BatteryActivity;
+import seu.com.androidlearn.test.broadcast.BroadcastActivity;
+import seu.com.androidlearn.test.customview.MultiPicActivity;
+import seu.com.androidlearn.test.dialog.AlertDialogActivity;
+import seu.com.androidlearn.test.dynamicviewpager.ViewPagerActivity;
+import seu.com.androidlearn.test.file.FileActivity;
+import seu.com.androidlearn.test.hook.HookActivity;
+import seu.com.androidlearn.test.ioc.runtime.RuntimeActivity;
+import seu.com.androidlearn.test.js.WebviewActivity;
+import seu.com.androidlearn.test.leak.LeakActivity;
+import seu.com.androidlearn.test.okhttpcache.OkHttpCacheActivity;
+import seu.com.androidlearn.test.recycle.RecyclerViewActivity;
+import seu.com.androidlearn.test.statusbar.StatusBarTestActivity;
+import seu.com.androidlearn.test.swipe.RecyclerActivity;
+import seu.com.androidlearn.test.touch.TouchTestActivity;
 
 public class MainActivity extends AppCompatActivity {
 

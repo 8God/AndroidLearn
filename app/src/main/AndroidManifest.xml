@@ -10,7 +10,7 @@
         android:label="@string/my_app_name"
         tools:replace="android:label, android:name"
         android:supportsRtl="true">
-        <receiver android:name=".broadcast.MyBroadcast">
+        <receiver android:name=".test.broadcast.MyBroadcast">
             <intent-filter>
                 <action android:name="com.seu.cc.test"/>
             </intent-filter>
@@ -40,24 +40,24 @@
             <category android:name="android.intent.category.LAUNCHER"/>
         </intent-filter>
         <activity
-            android:name=".statusbar.StatusBarTestActivity"
+            android:name=".test.statusbar.StatusBarTestActivity"
             android:theme="@style/StatusBarTran"/>
-        <activity android:name=".touch.TouchTestActivity"/>
-        <activity android:name=".customview.MultiPicActivity"/>
-        <activity android:name=".dialog.AlertDialogActivity"/>
-        <activity android:name=".battery.BatteryActivity"/>
-        <activity android:name=".swipe.RecyclerActivity"/>
-        <activity android:name=".recycle.RecyclerViewActivity"/>
-        <activity android:name=".leak.LeakActivity"/>
-        <activity android:name=".js.WebviewActivity"/>
-        <activity android:name=".file.FileActivity"/>
-        <activity android:name=".okhttpcache.OkHttpCacheActivity"/>
+        <activity android:name=".test.touch.TouchTestActivity"/>
+        <activity android:name=".test.customview.MultiPicActivity"/>
+        <activity android:name=".test.dialog.AlertDialogActivity"/>
+        <activity android:name=".test.battery.BatteryActivity"/>
+        <activity android:name=".test.swipe.RecyclerActivity"/>
+        <activity android:name=".test.recycle.RecyclerViewActivity"/>
+        <activity android:name=".test.leak.LeakActivity"/>
+        <activity android:name=".test.js.WebviewActivity"/>
+        <activity android:name=".test.file.FileActivity"/>
+        <activity android:name=".test.okhttpcache.OkHttpCacheActivity"/>
         <activity android:name=".test.TestActivity">
         </activity>
-        <activity android:name=".dynamicviewpager.ViewPagerActivity"/>
-        <activity android:name=".broadcast.BroadcastActivity"/>
-        <activity android:name=".ioc.runtime.RuntimeActivity"/>
-        <activity android:name=".hook.HookActivity"/>
+        <activity android:name=".test.dynamicviewpager.ViewPagerActivity"/>
+        <activity android:name=".test.broadcast.BroadcastActivity"/>
+        <activity android:name=".test.ioc.runtime.RuntimeActivity"/>
+        <activity android:name=".test.hook.HookActivity"/>
     </application>
 
 </manifest>

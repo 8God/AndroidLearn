@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <seu.com.androidlearn.customview.MultiPicView
+    <seu.com.androidlearn.test.customview.MultiPicView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

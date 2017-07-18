@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<seu.com.androidlearn.touch.TouchViewGroup
+<seu.com.androidlearn.test.touch.TouchViewGroup
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/touchViewGroup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <seu.com.androidlearn.touch.TouchView
+    <seu.com.androidlearn.test.touch.TouchView
         android:id="@+id/touchView"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:background="#409540"/>
-</seu.com.androidlearn.touch.TouchViewGroup>
+</seu.com.androidlearn.test.touch.TouchViewGroup>
