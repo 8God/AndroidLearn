@@ -60,6 +60,7 @@
         <activity android:name=".test.hook.HookActivity"/>
         <activity android:name=".test.typeface.TypefaceAfterActivity"/>
         <activity android:name=".test.typeface.TypefaceBeforeActivity"/>
+        <activity android:name=".test.classload.ClassLoadActivity"/>
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import seu.com.androidlearn.test.battery.BatteryActivity;
 import seu.com.androidlearn.test.broadcast.BroadcastActivity;
+import seu.com.androidlearn.test.classload.ClassLoadActivity;
 import seu.com.androidlearn.test.customview.MultiPicActivity;
 import seu.com.androidlearn.test.dialog.AlertDialogActivity;
 import seu.com.androidlearn.test.dynamicviewpager.ViewPagerActivity;
@@ -145,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.btn_change_type)
     protected void btnChangeType() {
         TypefaceBeforeActivity.launch(this);
+    }
+    @OnClick(R.id.btn_classload)
+    protected void btnClassLoadTest() {
+        ClassLoadActivity.launch(this);
     }
 
     @Override

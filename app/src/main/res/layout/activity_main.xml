@@ -126,5 +126,11 @@
             android:layout_height="50dp"
             android:text="change_typeface"/>
 
+        <Button
+            android:id="@+id/btn_classload"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="class loader from android"/>
+
     </LinearLayout>
 </ScrollView>
