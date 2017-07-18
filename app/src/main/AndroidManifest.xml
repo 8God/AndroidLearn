@@ -58,6 +58,8 @@
         <activity android:name=".test.broadcast.BroadcastActivity"/>
         <activity android:name=".test.ioc.runtime.RuntimeActivity"/>
         <activity android:name=".test.hook.HookActivity"/>
+        <activity android:name=".test.typeface.TypefaceAfterActivity"/>
+        <activity android:name=".test.typeface.TypefaceBeforeActivity"/>
     </application>
 
 </manifest>

@@ -26,6 +26,7 @@ import seu.com.androidlearn.test.recycle.RecyclerViewActivity;
 import seu.com.androidlearn.test.statusbar.StatusBarTestActivity;
 import seu.com.androidlearn.test.swipe.RecyclerActivity;
 import seu.com.androidlearn.test.touch.TouchTestActivity;
+import seu.com.androidlearn.test.typeface.TypefaceBeforeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -140,6 +141,10 @@ public class MainActivity extends AppCompatActivity {
     protected void btnModuleb() {
 //        ModuleBMainActivity.launch(this);
         ARouter.getInstance().build("/moduleb/activity").navigation();
+    }
+    @OnClick(R.id.btn_change_type)
+    protected void btnChangeType() {
+        TypefaceBeforeActivity.launch(this);
     }
 
     @Override

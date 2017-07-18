@@ -120,6 +120,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="button_hook"/>
+        <Button
+            android:id="@+id/btn_change_type"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="change_typeface"/>
 
     </LinearLayout>
 </ScrollView>

@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="android:windowBackground">@color/C_C6B697</item><!--如果为透明的话，背景显示的是黑色-->
+        <item name="android:typeface">monospace</item><!--全局字体使用-->
     </style>
 
     <style name="SplashTheme" parent="AppTheme">

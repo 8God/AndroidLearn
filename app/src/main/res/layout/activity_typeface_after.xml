@@ -5,18 +5,18 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/btnGotoPage"
-        android:text="go to page2"/>
+        android:id="@+id/btnChangeTypeFace"
+        android:text="chage typeface"/>
     <TextView
         android:id="@+id/tvContent1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="first page"
+        android:layout_height="100dp"
+        android:text="第二页面dasfdas我心疼大发顺丰阿斯蒂芬AAAAAA"
         android:gravity="center"/>
-    <seu.com.androidlearn.test.typeface.TypeTextView
+    <TextView
         android:id="@+id/tvContent2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="first page"
+        android:layout_height="100dp"
+        android:text="第二页面dasfdas我心疼大发顺丰阿斯蒂芬AAAAAA"
         android:gravity="center"/>
 </LinearLayout>
