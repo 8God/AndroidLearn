@@ -1,22 +1,26 @@
 package seu.cc.test;
 
-import com.example.test.GetMsg;
+import com.example.test.LaunchAnn;
 import com.google.auto.service.AutoService;
 
+import java.io.IOException;
+import java.io.Writer;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
+import javax.annotation.processing.Filer;
 import javax.annotation.processing.Messager;
+import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
-import javax.lang.model.element.PackageElement;
 import javax.lang.model.element.TypeElement;
-import javax.lang.model.element.VariableElement;
+import javax.lang.model.util.Elements;
 import javax.tools.Diagnostic;
+import javax.tools.JavaFileObject;
 
 /**
  * 一定要在java工程下，不然AbstractProcessor会无法使用
@@ -27,13 +31,23 @@ import javax.tools.Diagnostic;
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
 @AutoService(Processor.class)
 public class CakeProcessor extends AbstractProcessor {
+    private Filer mFileUtils;//文件相关的辅助类，生成javasourcecode
+    private Elements mElementUtils;//和元素相关的辅助类，获取元素信息
+    private Messager mMessager;//和日志相关的辅助类
+    @Override
+    public synchronized void init(ProcessingEnvironment processingEnvironment) {
+        super.init(processingEnvironment);
+        mFileUtils = processingEnv.getFiler();
+        mElementUtils = processingEnv.getElementUtils();
+        mMessager = processingEnv.getMessager();
+    }
     /**
      * 表示该Processor处理哪些注解
      */
     @Override
     public Set<String> getSupportedAnnotationTypes() {
         Set<String> types = new LinkedHashSet<String>();
-        types.add(GetMsg.class.getCanonicalName());//区别：getName，遇到数组的时候回不一样，[[String
+        types.add(LaunchAnn.class.getCanonicalName());//区别：getName，遇到数组的时候回不一样，[[String
         return types;
     }
     @Override
@@ -41,15 +55,30 @@ public class CakeProcessor extends AbstractProcessor {
         //用来输出到控制台，在编译器下方的Messages窗口
         Messager messager = processingEnv.getMessager();
         //遍历所有的GetMsg注解，然后进行处理
-        for (Element element : roundEnvironment.getElementsAnnotatedWith(GetMsg.class)) {
-            String methodName = element.getSimpleName().toString();
-            messager.printMessage(Diagnostic.Kind.NOTE, "Annotation class: " + methodName);
-            //获取注解的值
-            int id = element.getAnnotation(GetMsg.class).id();
-            String name = element.getAnnotation(GetMsg.class).name();
-            messager.printMessage(Diagnostic.Kind.NOTE, "Annotation value: id: " + id + " ;name: " + name);
+        CakeInfo info = new CakeInfo();
+        for (Element element : roundEnvironment.getElementsAnnotatedWith(LaunchAnn.class)) {
 
-            messager.printMessage(Diagnostic.Kind.NOTE, "-------------------------------------------");
+            TypeElement typeElement = (TypeElement) element;
+            String qualifiedName = typeElement.getQualifiedName().toString();
+            String key = element.getAnnotation(LaunchAnn.class).value();
+            info.putPackageName(key, qualifiedName);
+
+            //获取注解的值
+//            int id = element.getAnnotation(LaunchAnn.class).id();
+//            String name = element.getAnnotation(LaunchAnn.class).name();
+//            messager.printMessage(Diagnostic.Kind.NOTE, "Annotation value: id: " + id + " ;name: " + name);
+
+            messager.printMessage(Diagnostic.Kind.NOTE, "mymap: " + info.map.toString());
+        }
+
+        try {
+            JavaFileObject sourceFile = mFileUtils.createSourceFile(CakeInfo.PACKAGE_NAME + "." + CakeInfo.CLASS_NAME);
+            Writer writer = sourceFile.openWriter();
+            writer.write(info.getJavaCode());
+            writer.flush();
+            writer.close();
+        } catch (IOException e) {
+
         }
         //返回true表示该Process已经处理了，其他的Process不需要再处理了。
         return true;

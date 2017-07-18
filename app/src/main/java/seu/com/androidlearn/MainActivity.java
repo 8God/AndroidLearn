@@ -11,6 +11,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import seu.cc.compiler.Launch;
 import seu.com.androidlearn.test.battery.BatteryActivity;
 import seu.com.androidlearn.test.broadcast.BroadcastActivity;
 import seu.com.androidlearn.test.classload.ClassLoadActivity;
@@ -127,7 +128,8 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btnIOC_Runtime)
     protected void btnIOC_Runtime() {
-        RuntimeActivity.launch(this);
+//        RuntimeActivity.launch(this);
+        Launch.launch("RuntimeActivity", this);
     }
     @OnClick(R.id.btn_hook)
     protected void btn_hook() {

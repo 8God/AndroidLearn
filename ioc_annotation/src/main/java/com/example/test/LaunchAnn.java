@@ -9,9 +9,8 @@ import java.lang.annotation.Target;
  * Created by wuxiangyu on 2017/7/3.
  */
 
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.CLASS)
-public @interface GetMsg {
-    int id();
-    String name() default "default";
+public @interface LaunchAnn {
+    String value();
 }

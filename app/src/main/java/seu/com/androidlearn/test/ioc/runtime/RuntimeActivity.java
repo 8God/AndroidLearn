@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.ann.BindView;
-import com.example.test.GetMsg;
+import com.example.test.LaunchAnn;
 
 import seu.cc.compiler.MyIoc;
 
@@ -24,6 +24,7 @@ import seu.iocruntime.ann.ViewInject;
 /**
  * Created by wuxiangyu on 17/7/2.
  */
+@LaunchAnn("RuntimeActivity")
 @ContentView(R.layout.activity_runtime)
 public class RuntimeActivity extends AppCompatActivity {
     @ViewInject(R.id.btnRuntime_ioc)
@@ -54,7 +55,6 @@ public class RuntimeActivity extends AppCompatActivity {
     public void clickRuntime(View view) {
         Toast.makeText(this, "show ioc_click_runtime", Toast.LENGTH_LONG).show();
     }
-    @GetMsg(id = 10)
     public void testGetMsg(String name) {
         Log.e("Tag", "TestGetMsg");
     }
