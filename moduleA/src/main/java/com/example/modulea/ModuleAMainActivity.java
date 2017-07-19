@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.router.LaunchAnn;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,7 +20,7 @@ import butterknife.OnClick;
 /**
  * Created by wuxiangyu on 2017/7/10.
  */
-
+@LaunchAnn("ModuleAMainActivity")
 @Route(path = "/modulea/activity")
 public class ModuleAMainActivity extends AppCompatActivity {
     @BindView(R2.id.btnGoModuleB)

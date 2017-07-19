@@ -1,9 +1,7 @@
-package seu.cc.test;
+package seu.cc.launch;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.lang.model.element.VariableElement;
 
 /**
  * Created by wuxiangyu on 2017/7/18.
@@ -13,6 +11,9 @@ public class CakeInfo {
     private String moduleName;
     public CakeInfo(String moduleName) {
         this.moduleName = moduleName;
+    }
+    public String getModuleName() {
+        return moduleName;
     }
     Map<String, String> map = new HashMap<>();
     public void putPackageName(String key, String classFullName) {
@@ -35,7 +36,7 @@ public class CakeInfo {
 
         sb.append("@MergeLaunch\n");
         sb.append("public class ").append(CLASS_NAME).append(" implements LaunchInjector{\n");
-        sb.append("static HashMap<String, String> map = new HashMap<String, String>();\n");
+        sb.append("public static HashMap<String, String> map = new HashMap<String, String>();\n");
         sb.append("static{\n");
         for (String key: map.keySet()) {
             String classFullName = map.get(key);

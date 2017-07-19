@@ -78,7 +78,8 @@ public class MyProcessor extends AbstractProcessor {
      */
     @Override
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
-        mMessager.printMessage(Diagnostic.Kind.NOTE, "process...");
+
+        mMessager.printMessage(Diagnostic.Kind.NOTE, "MyProcessor-----------------------------------");
         mProxyMap.clear();
         Set<? extends Element> elements = roundEnvironment.getElementsAnnotatedWith(BindView.class);
         //收集信息

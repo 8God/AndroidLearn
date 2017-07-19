@@ -14,6 +14,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import seu.cc.compiler.Launch;
 
 /**
  * Created by wuxiangyu on 2017/7/10.
@@ -38,7 +39,8 @@ public class ModuleBMainActivity extends AppCompatActivity {
 
     @OnClick(R2.id.btnGoModuleA)
     public void onViewClicked() {
-        ARouter.getInstance().build("/modulea/activity").navigation();
+//        ARouter.getInstance().build("/modulea/activity").navigation();
         Toast.makeText(this, "btnGoModuleA", Toast.LENGTH_SHORT).show();
+        Launch.launch("ModuleAMainActivity", this);
     }
 }
