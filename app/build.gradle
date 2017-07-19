@@ -39,16 +39,16 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-    compile project(':ioc_runtime')
-    compile project(':ioc_api')
-    annotationProcessor project(':ioc_compiler')
+    compile project(':iocRuntime')
+    compile project(':iocApi')
+    annotationProcessor project(':iocAompiler')
     compile('com.alibaba:arouter-api:1.2.1.1')
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.2.1'
     if (rootProject.ext.isBuildMudle.toBoolean()) {
-        compile project(':module_base')
+        compile project(':moduleBase')
     } else {
-        compile project(':module_a')
-        compile project(':module_b')
+        compile project(':moduleA')
+        compile project(':moduleB')
     }
 
 }

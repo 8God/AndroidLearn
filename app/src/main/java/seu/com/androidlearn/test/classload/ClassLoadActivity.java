@@ -43,6 +43,7 @@ public class ClassLoadActivity extends AppCompatActivity {
         tvContent.append("\nTextView的ClassLoader： " + TextView.class.getClassLoader());
         tvContent.append("\nActivity的ClassLoader： " + getClassLoader());
         tvContent.append("\nRecyclerView的ClassLoader： " + RecyclerView.class.getClassLoader());
+        tvContent.append("\nSystemClassLoader的ClassLoader： " + ClassLoader.getSystemClassLoader());
 
     }
     private void test() {

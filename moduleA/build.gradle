@@ -27,23 +27,25 @@ android {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/debug文件夹下的所有文件,一般会存放testactivity，防止打包进去
+                    exclude 'debug/**'
+                }
             }
         }
     }
-    resourcePrefix "moduleb_"
+    resourcePrefix "modulea_"
 }
-
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
 
-//    compile 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 
     compile('com.alibaba:arouter-api:1.2.1.1')
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.2.1'
-    compile project(':module_base')
+    compile project(':moduleBase')
 }

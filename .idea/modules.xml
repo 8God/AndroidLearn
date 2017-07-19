@@ -4,13 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidLearn.iml" filepath="$PROJECT_DIR$/AndroidLearn.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ioc_annotation/ioc_annotation.iml" filepath="$PROJECT_DIR$/ioc_annotation/ioc_annotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ioc_api/ioc_api.iml" filepath="$PROJECT_DIR$/ioc_api/ioc_api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ioc_compiler/ioc_compiler.iml" filepath="$PROJECT_DIR$/ioc_compiler/ioc_compiler.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ioc_runtime/ioc_runtime.iml" filepath="$PROJECT_DIR$/ioc_runtime/ioc_runtime.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_a/module_a.iml" filepath="$PROJECT_DIR$/module_a/module_a.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_b/module_b.iml" filepath="$PROJECT_DIR$/module_b/module_b.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_base/module_base.iml" filepath="$PROJECT_DIR$/module_base/module_base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iocAnnotation/iocAnnotation.iml" filepath="$PROJECT_DIR$/iocAnnotation/iocAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iocAompiler/iocAompiler.iml" filepath="$PROJECT_DIR$/iocAompiler/iocAompiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iocApi/iocApi.iml" filepath="$PROJECT_DIR$/iocApi/iocApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iocRuntime/iocRuntime.iml" filepath="$PROJECT_DIR$/iocRuntime/iocRuntime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleA/moduleA.iml" filepath="$PROJECT_DIR$/moduleA/moduleA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleB/moduleB.iml" filepath="$PROJECT_DIR$/moduleB/moduleB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moduleBase/moduleBase.iml" filepath="$PROJECT_DIR$/moduleBase/moduleBase.iml" />
     </modules>
   </component>
 </project>

@@ -6,6 +6,7 @@ import com.google.auto.service.AutoService;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.processing.AbstractProcessor;
@@ -66,7 +67,11 @@ public class CakeProcessor extends AbstractProcessor {
             //获取注解的值
 //            int id = element.getAnnotation(LaunchAnn.class).id();
 //            String name = element.getAnnotation(LaunchAnn.class).name();
-//            messager.printMessage(Diagnostic.Kind.NOTE, "Annotation value: id: " + id + " ;name: " + name);
+            Map<String, String> options = processingEnv.getOptions();
+            if (options != null) {
+                String moduleName = options.get("moduleName");
+                messager.printMessage(Diagnostic.Kind.NOTE, "Annotation value: moduleName: " + moduleName + "-------------------------------------------" );
+            }
 
             messager.printMessage(Diagnostic.Kind.NOTE, "mymap: " + info.map.toString());
         }
@@ -81,6 +86,10 @@ public class CakeProcessor extends AbstractProcessor {
 
         }
         //返回true表示该Process已经处理了，其他的Process不需要再处理了。
+
+//        for (Element element : roundEnvironment.getElementsAnnotatedWith()) {
+//
+//        }
         return true;
     }
 }

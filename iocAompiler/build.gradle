@@ -4,7 +4,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //注解处理器
     compile 'com.google.auto.service:auto-service:1.0-rc2'
-    compile project(':ioc_annotation')
+    compile project(':iocAnnotation')
 }
 sourceCompatibility= rootProject.ext.javaVersion
 targetCompatibility= rootProject.ext.javaVersion
