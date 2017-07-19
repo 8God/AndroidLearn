@@ -1,6 +1,7 @@
 package seu.cc.test;
 
-import com.example.test.LaunchAnn;
+import com.example.router.LaunchAnn;
+import com.example.router.MergeLaunch;
 import com.google.auto.service.AutoService;
 
 import java.io.IOException;
@@ -55,14 +56,14 @@ public class CakeProcessor extends AbstractProcessor {
     public boolean process(Set<? extends TypeElement> set, RoundEnvironment roundEnvironment) {
         //用来输出到控制台，在编译器下方的Messages窗口
         Messager messager = processingEnv.getMessager();
+        messager.printMessage(Diagnostic.Kind.NOTE, "CakeProcessor-----------------------------------");
         //遍历所有的GetMsg注解，然后进行处理
-        CakeInfo info = new CakeInfo();
+        CakeInfo info = null;
         for (Element element : roundEnvironment.getElementsAnnotatedWith(LaunchAnn.class)) {
 
             TypeElement typeElement = (TypeElement) element;
             String qualifiedName = typeElement.getQualifiedName().toString();
             String key = element.getAnnotation(LaunchAnn.class).value();
-            info.putPackageName(key, qualifiedName);
 
             //获取注解的值
 //            int id = element.getAnnotation(LaunchAnn.class).id();
@@ -71,11 +72,14 @@ public class CakeProcessor extends AbstractProcessor {
             if (options != null) {
                 String moduleName = options.get("moduleName");
                 messager.printMessage(Diagnostic.Kind.NOTE, "Annotation value: moduleName: " + moduleName + "-------------------------------------------" );
+                info = new CakeInfo(moduleName);
+                info.putPackageName(key, qualifiedName);
             }
 
-            messager.printMessage(Diagnostic.Kind.NOTE, "mymap: " + info.map.toString());
         }
-
+        if (info == null) {
+            return false;
+        }
         try {
             JavaFileObject sourceFile = mFileUtils.createSourceFile(CakeInfo.PACKAGE_NAME + "." + CakeInfo.CLASS_NAME);
             Writer writer = sourceFile.openWriter();
@@ -85,11 +89,15 @@ public class CakeProcessor extends AbstractProcessor {
         } catch (IOException e) {
 
         }
-        //返回true表示该Process已经处理了，其他的Process不需要再处理了。
 
-//        for (Element element : roundEnvironment.getElementsAnnotatedWith()) {
-//
-//        }
+        messager.printMessage(Diagnostic.Kind.NOTE, "generate LaunchAnn already-----------------------------------");
+        //返回true表示该Process已经处理了，其他的Process不需要再处理了。
+        MergelaunchInfo mergelaunchInfo = new MergelaunchInfo();
+        for (Element element : roundEnvironment.getElementsAnnotatedWith(MergeLaunch.class)) {
+            TypeElement typeElement = (TypeElement) element;
+            String qualifiedName = typeElement.getQualifiedName().toString();
+            messager.printMessage(Diagnostic.Kind.NOTE, "generate MergeLaunch already-----------------------------------+:" + qualifiedName);
+        }
         return true;
     }
 }

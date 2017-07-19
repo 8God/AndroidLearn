@@ -1,1 +1,1 @@
-include ':app', ':iocRuntime', ':iocAompiler', ':iocApi', ':iocAnnotation', ':moduleBase', ':moduleA', ':moduleB'
+include ':app', ':iocRuntime', ':iocCompiler', ':iocApi', ':iocAnnotation', ':moduleBase', ':moduleA', ':moduleB'

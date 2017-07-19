@@ -10,6 +10,10 @@ import javax.lang.model.element.VariableElement;
  */
 
 public class CakeInfo {
+    private String moduleName;
+    public CakeInfo(String moduleName) {
+        this.moduleName = moduleName;
+    }
     Map<String, String> map = new HashMap<>();
     public void putPackageName(String key, String classFullName) {
         map.put(key, classFullName);
@@ -23,9 +27,13 @@ public class CakeInfo {
     public static final String CLASS_NAME = "LaunchUtil";
     public String getJavaCode() {
         StringBuilder sb = new StringBuilder();
-        sb.append("package ").append(PACKAGE_NAME).append(";\n\n");
+        sb.append("package ").append(PACKAGE_NAME).append("." + moduleName).append(";\n\n");
+
         sb.append("import java.util.HashMap;\n");
-        sb.append("import seu.cc.compiler.LaunchInjector;\n");
+        sb.append("import com.example.router.MergeLaunch;\n");
+        sb.append("import seu.cc.compiler.LaunchInjector;\n\n");
+
+        sb.append("@MergeLaunch\n");
         sb.append("public class ").append(CLASS_NAME).append(" implements LaunchInjector{\n");
         sb.append("static HashMap<String, String> map = new HashMap<String, String>();\n");
         sb.append("static{\n");

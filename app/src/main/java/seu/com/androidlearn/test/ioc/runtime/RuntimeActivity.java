@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.ann.BindView;
-import com.example.test.LaunchAnn;
+import com.example.router.LaunchAnn;
 
 import seu.cc.compiler.MyIoc;
 
