@@ -3,3 +3,20 @@
 -iocAnnotation  
 -iocCompiler  
 -iocApi  
+
+
+
+注解使用：
+```
+@LaunchAnn("RuntimeActivity")
+public class RuntimeActivity extends Activity {
+    
+}
+
+```
+打开 activity：
+```
+public void onClick(View view) {
+    Launch.launch("RuntimeActivity", this);
+}
+```
