@@ -33,20 +33,24 @@ public class CakeInfo {
         sb.append("package ").append(PACKAGE_NAME).append(";\n\n");
 
         sb.append("import java.util.HashMap;\n");
+        sb.append("import java.util.Map;\n");
         sb.append("import seu.annotation.router.MergeLaunch;\n");
         sb.append("import seu.api.compiler.LaunchInjector;\n\n");
 
         sb.append("@MergeLaunch\n");
         sb.append("public class ").append(CLASS_NAME + "$$" + moduleName).append(" implements LaunchInjector {\n");
-        sb.append("public static HashMap<String, String> map = new HashMap<String, String>();\n");
+        sb.append("public static Map<String, Class<?>> map = new HashMap<String, Class<?>>();\n");
         sb.append("static{\n");
         for (String key: map.keySet()) {
             String classFullName = map.get(key);
-            sb.append("map.put(\"" + key + "\", \"" + classFullName + "\");\n");
+            sb.append("map.put(\"" + key + "\", " + classFullName + ".class);\n");
         }
         sb.append("}\n");
-        sb.append("public String getPackageName(String key) {\n");
+        sb.append("public Class<?> getPackageName(String key) {\n");
         sb.append("return map.get(key);\n");
+        sb.append("}\n");
+        sb.append("public Map<String, Class<?>> getMap() {\n");
+        sb.append("return map;\n");
         sb.append("}\n");
         sb.append("}\n");
         return sb.toString();

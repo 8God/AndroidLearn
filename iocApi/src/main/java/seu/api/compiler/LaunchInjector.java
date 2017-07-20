@@ -1,9 +1,12 @@
 package seu.api.compiler;
 
+import java.util.Map;
+
 /**
  * Created by wuxiangyu on 2017/7/18.
  */
 
 public interface LaunchInjector {
-    public String getPackageName(String key);
+    Class<?> getPackageName(String key);
+    Map<String, Class<?>> getMap();
 }

@@ -9,10 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.IllegalFormatException;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Logger;
-
 import dalvik.system.DexFile;
 
 /**
@@ -20,19 +19,23 @@ import dalvik.system.DexFile;
  */
 
 public class Launch {
-    Map<String, Class<?>> routerMap = new HashMap<>();
-    static {
+    static Map<String, Class<?>> routerMap = new HashMap<>();
 
+    private volatile static boolean inited = false;
+    public static void init(Context context) {
+        inited = true;
+        initMap(Constants.PACKAGE_NAME, context);
     }
-
-    public static List<String> getClassListByPackageName(String packageName, Activity activity) {
+    /**
+     * todo暂无考虑多个dex的情况
+     */
+    public static List<String> getClassListByPackageName(String packageName, Context context) {
         List<String> classNameList=new ArrayList<String>();
         try {
-            DexFile df = new DexFile(activity.getPackageCodePath());//通过DexFile查找当前的APK中可执行文件
+            DexFile df = new DexFile(context.getPackageCodePath());//通过DexFile查找当前的APK中可执行文件
             Enumeration<String> enumeration = df.entries();//获取df中的元素  这里包含了所有可执行的类名 该类名包含了包名+类名的方式
             while (enumeration.hasMoreElements()) {//遍历
                 String className = (String) enumeration.nextElement();
-
                 if (className.contains(packageName)) {//在当前所有可执行的类里面查找包含有该包名的所有类
                     classNameList.add(className);
                 }
@@ -42,22 +45,37 @@ public class Launch {
         }
         return  classNameList;
     }
-    public static void launch(String name, Activity activity) {
-        List<String> classList = getClassListByPackageName(Constants.PACKAGE_NAME, activity);
+
+    public static void initMap(String name, Context context) {
+        if (!inited) {
+            throw new IllegalStateException("Launch not init");
+        }
+        List<String> classList = getClassListByPackageName(Constants.PACKAGE_NAME, context);
         Log.e("Tag", classList.toString());
 
-        String launchClass = "seu.com.util.LaunchUtil%%app";
-        try {
-            Class<?> clazz = Class.forName(launchClass);
-            LaunchInjector launchInjector = (LaunchInjector) clazz.newInstance();
-            String packagename = launchInjector.getPackageName(name);
-            clazz = Class.forName(packagename);
+        if (classList == null) {
+            return;
+        }
+        for (String fullClassName : classList) {
+            Class<?> clazz;
+            try {
+                clazz = Class.forName(fullClassName);
+                LaunchInjector launchInjector = (LaunchInjector) clazz.newInstance();
+                Map<String, Class<?>> mapFromLib = launchInjector.getMap();
+                routerMap.putAll(mapFromLib);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public static void launch(String name, Activity activity) {
+        Class<?> clazz = routerMap.get(name);
+        if (clazz != null) {
             Intent intent = new Intent();
             intent.setClass(activity, clazz);
             activity.startActivity(intent);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-//        String proxyClassFullName = activity.getClass().getName() + "$$" + "ViewInject";
     }
 }

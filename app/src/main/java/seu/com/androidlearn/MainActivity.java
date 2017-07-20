@@ -19,6 +19,7 @@ import seu.com.androidlearn.test.customview.MultiPicActivity;
 import seu.com.androidlearn.test.dialog.AlertDialogActivity;
 import seu.com.androidlearn.test.dynamicviewpager.ViewPagerActivity;
 import seu.com.androidlearn.test.file.FileActivity;
+import seu.com.androidlearn.test.hook.HookActivity;
 import seu.com.androidlearn.test.js.WebviewActivity;
 import seu.com.androidlearn.test.leak.LeakActivity;
 import seu.com.androidlearn.test.okhttpcache.OkHttpCacheActivity;
@@ -131,8 +132,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btn_hook)
     protected void btn_hook() {
-//        HookActivity.launch(this);
-        ARouter.getInstance().build("/app/HookActivity").navigation();
+        HookActivity.launch(this);
     }
     @OnClick(R.id.btn_module_a)
     protected void btnModulea() {

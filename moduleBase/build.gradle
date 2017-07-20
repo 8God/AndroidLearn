@@ -37,6 +37,9 @@ dependencies {
     compile('com.alibaba:arouter-api:1.2.1.1')
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.2.1'
 
+    compile project(':iocApi')
+    annotationProcessor project(':iocCompiler')
+
 
     //dagger2
     annotationProcessor "com.google.dagger:dagger-compiler:2.5"
