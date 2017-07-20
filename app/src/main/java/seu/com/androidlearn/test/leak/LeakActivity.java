@@ -20,7 +20,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import seu.com.androidlearn.R;
-import seu.com.androidlearn.test.js.WebviewActivity;
 
 /**
  * Created by wuxiangyu on 2017/6/14.

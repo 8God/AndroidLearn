@@ -10,10 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.ann.BindView;
-import com.example.router.LaunchAnn;
 
-import seu.cc.compiler.MyIoc;
+import seu.annotation.ann.BindView;
+import seu.annotation.router.LaunchAnn;
+import seu.api.compiler.MyIoc;
 
 import seu.com.androidlearn.R;
 import seu.iocruntime.ViewInjectUtils;

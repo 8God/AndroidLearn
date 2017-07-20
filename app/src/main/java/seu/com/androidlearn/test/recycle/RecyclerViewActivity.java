@@ -22,7 +22,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import seu.com.androidlearn.R;
-import seu.com.androidlearn.test.swipe.RecyclerActivity;
 
 /**
  * Created by wuxiangyu on 2017/6/13.

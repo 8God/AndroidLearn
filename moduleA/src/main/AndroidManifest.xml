@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
-    package="com.example.modulea">
+    package="seu.com.modulea">
 
     <application
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.modulea.ModuleAMainActivity" />
+        <activity android:name=".ModuleAMainActivity" />
     </application>
 
 </manifest>

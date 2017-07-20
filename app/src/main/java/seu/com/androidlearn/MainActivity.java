@@ -11,7 +11,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import seu.cc.compiler.Launch;
+import seu.api.compiler.Launch;
 import seu.com.androidlearn.test.battery.BatteryActivity;
 import seu.com.androidlearn.test.broadcast.BroadcastActivity;
 import seu.com.androidlearn.test.classload.ClassLoadActivity;
@@ -19,8 +19,6 @@ import seu.com.androidlearn.test.customview.MultiPicActivity;
 import seu.com.androidlearn.test.dialog.AlertDialogActivity;
 import seu.com.androidlearn.test.dynamicviewpager.ViewPagerActivity;
 import seu.com.androidlearn.test.file.FileActivity;
-import seu.com.androidlearn.test.hook.HookActivity;
-import seu.com.androidlearn.test.ioc.runtime.RuntimeActivity;
 import seu.com.androidlearn.test.js.WebviewActivity;
 import seu.com.androidlearn.test.leak.LeakActivity;
 import seu.com.androidlearn.test.okhttpcache.OkHttpCacheActivity;
@@ -120,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btnBaseLibrary)
     protected void clicpBaseLibrary() {
-//        com.example.baseandroidlib.TestActivity.launch(this);
+//        TestActivity.launch(this);
     }
     @OnClick(R.id.btnBroadcast)
     protected void clicBroadcast() {
@@ -133,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btn_hook)
     protected void btn_hook() {
-        HookActivity.launch(this);
+//        HookActivity.launch(this);
+        ARouter.getInstance().build("/app/HookActivity").navigation();
     }
     @OnClick(R.id.btn_module_a)
     protected void btnModulea() {

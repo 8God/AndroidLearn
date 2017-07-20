@@ -1,2 +1,2 @@
 
--keep class * extends seu.cc.compiler.ViewInjector
+-keep class * extends seu.api.compiler.ViewInjector

@@ -1,10 +1,9 @@
 package seu.com.androidlearn;
 
-import android.app.Application;
 import android.graphics.Typeface;
 import android.util.Log;
 
-import com.example.baseandroidlib.BaseApplication;
+import seu.com.baseandroidlib.BaseApplication;
 import com.squareup.leakcanary.LeakCanary;
 
 import java.lang.reflect.Field;

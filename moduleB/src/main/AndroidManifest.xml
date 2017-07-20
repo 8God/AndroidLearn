@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 
-    package="com.example.moduleb">
+    package="seu.com.moduleb">
 
     <application >
         <activity android:name=".ModuleBMainActivity" />

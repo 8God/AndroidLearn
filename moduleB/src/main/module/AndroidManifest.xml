@@ -6,7 +6,7 @@
         android:label="@string/moduleb_app_name"
         android:supportsRtl="true">
 
-        <activity android:name=".ModuleBMainActivity" >
+        <activity android:name="seu.com.moduleb.ModuleBMainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

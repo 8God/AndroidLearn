@@ -7,12 +7,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+
 import seu.com.androidlearn.R;
 
 /**
  * Created by wuxiangyu on 2017/7/7.
  */
 
+@Route(path = "/app/HookActivity")
 public class HookActivity extends AppCompatActivity {
     public static void launch(Activity activity) {
         Intent intent = new Intent();
