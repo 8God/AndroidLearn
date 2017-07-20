@@ -8,9 +8,11 @@ import java.util.Map;
  */
 
 public class CakeInfo {
-    private String moduleName;
+    private final String moduleName;
+    public final String FILE_FULL_NAME;
     public CakeInfo(String moduleName) {
         this.moduleName = moduleName;
+        FILE_FULL_NAME = PACKAGE_NAME + "." + CLASS_NAME + "$$" + moduleName;
     }
     public String getModuleName() {
         return moduleName;
@@ -24,18 +26,18 @@ public class CakeInfo {
         return map.get(key);
     }
 
-    public static final String PACKAGE_NAME = "seu.com.util";
-    public static final String CLASS_NAME = "LaunchUtil";
+    public final String PACKAGE_NAME = "seu.com.util";//所有生成的java都放在同一个文件加下面。
+    public final String CLASS_NAME = "LaunchUtil";
     public String getJavaCode() {
         StringBuilder sb = new StringBuilder();
-        sb.append("package ").append(PACKAGE_NAME).append("." + moduleName).append(";\n\n");
+        sb.append("package ").append(PACKAGE_NAME).append(";\n\n");
 
         sb.append("import java.util.HashMap;\n");
         sb.append("import seu.annotation.router.MergeLaunch;\n");
         sb.append("import seu.api.compiler.LaunchInjector;\n\n");
 
         sb.append("@MergeLaunch\n");
-        sb.append("public class ").append(CLASS_NAME).append(" implements LaunchInjector{\n");
+        sb.append("public class ").append(CLASS_NAME + "$$" + moduleName).append(" implements LaunchInjector {\n");
         sb.append("public static HashMap<String, String> map = new HashMap<String, String>();\n");
         sb.append("static{\n");
         for (String key: map.keySet()) {

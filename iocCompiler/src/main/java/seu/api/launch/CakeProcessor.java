@@ -83,7 +83,8 @@ public class CakeProcessor extends AbstractProcessor {
             return false;
         }
         try {
-            JavaFileObject sourceFile = mFileUtils.createSourceFile(CakeInfo.PACKAGE_NAME + "." + info.getModuleName()+"." + CakeInfo.CLASS_NAME);
+            messager.printMessage(Diagnostic.Kind.NOTE, "className: " + info.FILE_FULL_NAME + "-------------------------------------------" );
+            JavaFileObject sourceFile = mFileUtils.createSourceFile(info.FILE_FULL_NAME);
             Writer writer = sourceFile.openWriter();
             writer.write(info.getJavaCode());
             writer.flush();
