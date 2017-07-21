@@ -2,7 +2,8 @@
 
     package="seu.com.modulea">
 
-    <application android:allowBackup="true" android:label="@string/modulea_app_name"
+    <application android:allowBackup="true"
+        android:label="@string/modulea_app_name"
         android:supportsRtl="true">
         <activity android:name=".ModuleAMainActivity" >
             <intent-filter>

@@ -25,10 +25,11 @@ public class BaseApplication extends Application implements IApplication{
      */
     @Override
     public void load(Application application) {
-        if (Configs.isDebug) {
+//        if (Configs.isDebug) {
+            Log.e("Tag", "debugggggggggg");
             ARouter.openLog();     // 打印日志
             ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
-        }
+//        }
         ARouter.init(application);
         Launch.init(application);
         ImageLoader.init(application);

@@ -20,7 +20,7 @@ import seu.annotation.router.LaunchAnn;
 /**
  * Created by wuxiangyu on 2017/7/10.
  */
-@LaunchAnn("ModuleAMainActivity")
+//@LaunchAnn("ModuleAMainActivity")
 @Route(path = "/modulea/ModuleAMainActivity")
 public class ModuleAMainActivity extends AppCompatActivity {
     @BindView(R2.id.btnGank)
