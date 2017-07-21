@@ -5,13 +5,8 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnGoModuleB"
+        android:id="@+id/btnGank"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="go to ModuleB"/>
-    <Button
-        android:id="@+id/btnToast"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="go to toast"/>
 </LinearLayout>
