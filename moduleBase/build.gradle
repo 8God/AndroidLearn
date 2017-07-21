@@ -52,4 +52,8 @@ dependencies {
 
     //retrofit2
     compile "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
+    //picasso
+    compile "com.squareup.picasso:picasso:${rootProject.ext.picassoVersion}"
+    //retrofit
+    compile "com.squareup.retrofit2:converter-gson:2.3.0"
 }

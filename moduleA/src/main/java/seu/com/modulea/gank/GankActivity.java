@@ -15,6 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import seu.com.modulea.R;
 import seu.com.modulea.R2;
+import seu.com.modulea.gank.fuli.GankFuliFragment;
 
 
 /**
@@ -50,7 +51,7 @@ public class GankActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            GankFragment fragment = GankFragment.getInstance();
+            GankFuliFragment fragment = GankFuliFragment.getInstance();
             return fragment;
         }
 

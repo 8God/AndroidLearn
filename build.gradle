@@ -43,6 +43,7 @@ ext {
     arouterApiVersion = "1.2.1.1"
     leakcanaryVersion = "1.5"
     retrofitVersion = "2.3.0"
+    picassoVersion = "2.5.2"
 
     //需检查升级版本
     annotationProcessor = "1.1.7"
