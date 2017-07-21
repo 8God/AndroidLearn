@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.moduleb.R;
-import com.example.moduleb.R2;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
