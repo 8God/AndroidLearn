@@ -21,13 +21,8 @@ import seu.annotation.router.LaunchAnn;
  * Created by wuxiangyu on 2017/7/10.
  */
 @LaunchAnn("ModuleAMainActivity")
-@Route(path = "/modulea/activity")
+@Route(path = "/modulea/ModuleAMainActivity")
 public class ModuleAMainActivity extends AppCompatActivity {
-    @BindView(R2.id.btnGoModuleB)
-    protected Button btnGoModuleB;
-    @BindView(R2.id.btnToast)
-    protected Button btnToast;
-
     public static void launch(Activity activity) {
         Intent intent = new Intent();
         intent.setClass(activity, ModuleAMainActivity.class);
@@ -41,13 +36,4 @@ public class ModuleAMainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-
-    @OnClick(R2.id.btnGoModuleB)
-    public void onViewClicked() {
-        ARouter.getInstance().build("/moduleb/activity").navigation();
-    }
-    @OnClick(R2.id.btnToast)
-    public void onClickToast(View view) {
-        Toast.makeText(this, "btnToast", Toast.LENGTH_SHORT).show();
-    }
 }

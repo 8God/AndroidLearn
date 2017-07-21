@@ -1,136 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <LinearLayout
+    android:gravity="center">
+    <Button
+        android:id="@+id/btnTest"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/btn_module_a"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="module_a"/>
-
-        <Button
-            android:id="@+id/btn_module_b"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="module_b"/>
-
-        <Button
-            android:id="@+id/btnTtest"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="测试"/>
-        <Button
-            android:id="@+id/btnTouchEvent"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="touch事件案例"/>
-
-        <Button
-            android:id="@+id/btnStatusBar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="StatusBar案例"/>
-        <Button
-            android:id="@+id/btnMultiPic"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="多个图片重叠"/>
-
-        <Button
-            android:id="@+id/btnShowAlertDialog"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="alertDialog旋转问题"/>
-
-        <Button
-            android:id="@+id/btnBattery"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="电量操作"/>
-
-        <Button
-            android:id="@+id/btnSwipe"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="侧滑测试"/>
-
-        <Button
-            android:id="@+id/btnGridRecyc"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="recyclerview Test"/>
-
-        <Button
-            android:id="@+id/btnCreateCallback"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="匿名内部类导致的内存泄漏"/>
-
-        <Button
-            android:id="@+id/btnClickWebView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="webview漏洞"/>
-
-        <Button
-            android:id="@+id/btnFile"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="File"/>
-
-        <Button
-            android:id="@+id/btnOkhttpCache"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="OkhttpCache"/>
-
-        <Button
-            android:id="@+id/btnViewpager"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="dynamic viewpager"/>
-
-        <Button
-            android:id="@+id/btnBaseLibrary"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="base libary"/>
-
-        <Button
-            android:id="@+id/btnBroadcast"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="broadcast"/>
-
-        <Button
-            android:id="@+id/btnIOC_Runtime"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="ioc_runtime"/>
-
-        <Button
-            android:id="@+id/btn_hook"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="button_hook"/>
-        <Button
-            android:id="@+id/btn_change_type"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="change_typeface"/>
-
-        <Button
-            android:id="@+id/btn_classload"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="class loader from android"/>
-
-    </LinearLayout>
-</ScrollView>
+        android:layout_height="50dp"
+        android:text="test_project"/>
+    <Button
+        android:id="@+id/btnGank_moduleA"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Gank"/>
+</LinearLayout>
