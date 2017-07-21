@@ -34,8 +34,8 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 
 
-    compile "com.alibaba:arouter-api:1.2.1.1"
-    annotationProcessor "com.alibaba:arouter-compiler:1.1.2.1"
+    compile "com.alibaba:arouter-api:${rootProject.ext.arouterApiVersion}"//好蛋疼啊，为啥不能替换成常量
+    annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouterVersion}"
 
     compile project(':iocApi')
     annotationProcessor project(':iocCompiler')

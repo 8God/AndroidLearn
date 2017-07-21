@@ -44,7 +44,7 @@ dependencies {
     annotationProcessor project(':iocCompiler')
 
 //    compile('com.alibaba:arouter-api:1.2.1.1')
-    annotationProcessor "com.alibaba:arouter-compiler:1.1.2.1"
+    annotationProcessor "com.alibaba:arouter-compiler:${rootProject.ext.arouterVersion}"
 
     if (rootProject.ext.isBuildMudle.toBoolean()) {
         compile project(':moduleBase')

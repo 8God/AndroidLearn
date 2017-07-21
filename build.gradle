@@ -40,6 +40,7 @@ ext {
     butterknifeVersion = "8.6.0"
     daggerVersion = "2.6"
     arouterVersion = "1.1.2.1"
+    arouterApiVersion = "1.2.1.1"
     leakcanaryVersion = "1.5"
     retrofitVersion = "2.3.0"
 
