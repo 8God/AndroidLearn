@@ -30,8 +30,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 
-    compile 'com.jakewharton:butterknife:8.6.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    compile "com.jakewharton:butterknife:${rootProject.ext.butterknifeVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 
 
     compile('com.alibaba:arouter-api:1.2.1.1')
@@ -42,6 +42,13 @@ dependencies {
 
 
     //dagger2
-    annotationProcessor "com.google.dagger:dagger-compiler:2.5"
-    compile "com.google.dagger:dagger:2.5"
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
+    compile "com.google.dagger:dagger:${rootProject.ext.daggerVersion}"
+
+
+    debugCompile "com.squareup.leakcanary:leakcanary-android:${rootProject.ext.leakcanaryVersion}"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${rootProject.ext.leakcanaryVersion}"
+
+    //retrofit2
+    compile "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
 }

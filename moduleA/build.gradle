@@ -43,9 +43,9 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
 
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeVersion}"
 
-    compile project(':iocApi')
+//    compile project(':iocApi')
     annotationProcessor project(':iocCompiler')
 
     compile('com.alibaba:arouter-api:1.2.1.1')
