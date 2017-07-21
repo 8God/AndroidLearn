@@ -37,6 +37,12 @@ ext {
     // App dependencies version
     supportLibraryVersion = "25.2.0"
 
+    butterknifeVersion = "8.6.0"
+    daggerVersion = "2.6"
+    arouterVersion = "1.1.2.1"
+    leakcanaryVersion = "1.5"
+    retrofitVersion = "2.3.0"
+
     //需检查升级版本
     annotationProcessor = "1.1.7"
     routerVersion = "1.2.2"
